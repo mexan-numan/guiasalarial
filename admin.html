@@ -191,8 +191,11 @@
 
   <div class="admin-panel" id="login-section">
     <h2>Acceso Administrador</h2>
-    <p style="font-size: 14px; color: #666; margin-bottom: 20px;">Ingresa la contraseña para gestionar la base de datos.</p>
+    <p style="font-size: 14px; color: #666; margin-bottom: 20px;">Ingresa tus credenciales para gestionar la base de datos.</p>
     
+    <div class="form-group">
+      <input type="email" id="admin-email" class="form-control" placeholder="Email (ej. ricardo.garrido@numan.la)">
+    </div>
     <div class="form-group">
       <input type="password" id="admin-pass" class="form-control" placeholder="Contraseña">
     </div>
@@ -226,19 +229,70 @@
       <div id="upload-status" style="margin-top: 10px; font-size: 13px; font-weight: 600;"></div>
     </div>
 
-    <!-- Filtros -->
-    <div class="filters-section">
-      <div class="filter-group">
-        <label for="date-start">Fecha Inicial</label>
-        <input type="date" id="date-start">
-      </div>
-      <div class="filter-group">
-        <label for="date-end">Fecha Final</label>
-        <input type="date" id="date-end">
-      </div>
-      <div class="filter-group" style="flex: 0 0 auto;">
-        <button id="btn-filter" class="btn-submit" style="background:#214496; padding: 10px 20px;">Filtrar / Actualizar</button>
-      </div>
+    <!-- Filtros Avanzados -->
+    <div class="filters-section" style="background: white; border: 1px solid #eee; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+        <div class="filter-group">
+            <label for="date-start">Fecha Inicio</label>
+            <input type="date" id="date-start" class="form-control">
+        </div>
+        <div class="filter-group">
+            <label for="date-end">Fecha Fin</label>
+            <input type="date" id="date-end" class="form-control">
+        </div>
+        <div class="filter-group">
+            <label for="filter-country">País</label>
+            <select id="filter-country" class="form-control">
+                <option value="">Todos</option>
+                <option value="México">México</option>
+                <option value="Colombia">Colombia</option>
+                <option value="Perú">Perú</option>
+                <option value="Argentina">Argentina</option>
+            </select>
+        </div>
+        <div class="filter-group">
+            <label for="filter-size">Tamaño Empresa</label>
+            <select id="filter-size" class="form-control">
+                <option value="">Todos</option>
+                <option value="pequena">Pequeña</option>
+                <option value="mediana">Mediana</option>
+                <option value="grande">Grande</option>
+            </select>
+        </div>
+        <div class="filter-group">
+            <label for="filter-specialization">Área</label>
+            <select id="filter-specialization" class="form-control">
+                <option value="">Todos</option>
+                <option value="Ingeniería">Ingeniería</option>
+                <option value="Supply Chain">Supply Chain</option>
+                <option value="Manufactura">Manufactura</option>
+                <option value="Compras">Compras</option>
+                <option value="Operaciones">Operaciones</option>
+                <option value="Recursos humanos">Recursos humanos</option>
+                <option value="Finanzas (Planta)">Finanzas (Planta)</option>
+            </select>
+        </div>
+        <div class="filter-group">
+            <label for="filter-industry">Industria</label>
+            <select id="filter-industry" class="form-control">
+                <option value="">Todas</option>
+                <option value="Industria Automotriz">Automotriz</option>
+                <option value="Industria Electrónica">Electrónica</option>
+                <option value="Industria de Alimentos y Bebidas">Alimentos y Bebidas</option>
+                <option value="Tecnologías de la Información y Software">Tecnología/IT</option>
+            </select>
+        </div>
+        <div class="filter-group">
+            <label for="filter-interest">Interés</label>
+            <select id="filter-interest" class="form-control">
+                <option value="">Todos</option>
+                <option value="contratar">Contratar talento</option>
+                <option value="buscar_empleo">Buscar empleo</option>
+                <option value="benchmarking">Benchmarking salarial</option>
+            </select>
+        </div>
+        <div class="filter-group" style="flex: 0 0 auto;">
+            <button id="btn-filter" class="btn-submit" style="background:#214496; padding: 10px 25px; margin-top:28px;">Filtrar</button>
+        </div>
     </div>
 
     <!-- KPIs -->
@@ -285,32 +339,102 @@
       </table>
     </div>
 
+    <!-- Gestión de Administradores (Solo Super-Admin) -->
+    <div id="admin-management-section" style="display: none; background: #fff; padding: 25px; border-radius: 8px; border: 1px solid #eee; margin-top: 40px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+        <h3 style="margin-top: 0; color: var(--numan-red); display: flex; align-items: center;">
+            <svg style="width:20px; height:20px; margin-right:10px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="17" y1="11" x2="23" y2="11"/></svg>
+            Gestión de Usuarios Administradores
+        </h3>
+        <p style="font-size: 13px; color: #666; margin-bottom: 20px;">Como Super-Admin, puedes registrar nuevos administradores para este panel.</p>
+        
+        <form id="new-admin-form" style="display: grid; grid-template-columns: 1fr 1fr 150px; gap: 20px; align-items: flex-end;">
+            <div class="filter-group">
+                <label>Email del Nuevo Admin</label>
+                <input type="email" id="new-admin-email" class="form-control" placeholder="ej. colega@numan.la" required>
+            </div>
+            <div class="filter-group">
+                <label>Contraseña Temporal</label>
+                <input type="password" id="new-admin-pass" class="form-control" placeholder="Mínimo 6 caracteres" required>
+            </div>
+            <button type="submit" class="btn-submit" style="background: #8CC63F;">Registrar</button>
+        </form>
+        <div id="admin-create-status" style="margin-top: 15px; font-size: 13px; font-weight: 600;"></div>
+    </div>
+
   </div>
 
   <script>
-    const SH = "TnVtYW4yMDI2"; // Obfuscated secret (Numan2026)
+    let currentAdmin = null;
     let allRegistrations = [];
+    let filteredRegistrations = [];
     let chartInstance = null;
 
     document.getElementById('btn-login').addEventListener('click', async () => {
+        const email = document.getElementById('admin-email').value.trim();
         const pass = document.getElementById('admin-pass').value;
         const btn = document.getElementById('btn-login');
         
-        if(btoa(pass) === SH) {
-            btn.disabled = true;
-            btn.textContent = "Autenticando y cargando...";
-            
-            try {
-              document.getElementById('login-section').style.display = 'none';
-              document.getElementById('export-section').style.display = 'block';
-              
-              await loadRegistrations();
-            } catch (err) {
-              console.error(err);
-              alert("Error al cargar la base de datos.");
+        btn.disabled = true;
+        btn.textContent = "Validando...";
+
+        try {
+            const { data, error } = await supabase.rpc('verify_admin_login', {
+                input_email: email,
+                input_password: pass
+            });
+
+            if (error) throw error;
+
+            if(data && data.success) {
+                currentAdmin = data;
+                document.getElementById('login-section').style.display = 'none';
+                document.getElementById('export-section').style.display = 'block';
+                
+                // Mostrar gestión si es super-admin
+                if (currentAdmin.is_superuser) {
+                    document.getElementById('admin-management-section').style.display = 'block';
+                }
+
+                await loadRegistrations();
+            } else {
+                alert("Credenciales incorrectas. Verifica el email y contraseña.");
+                btn.disabled = false;
+                btn.textContent = "Ingresar";
             }
-        } else {
-            alert("Contraseña incorrecta");
+        } catch (err) {
+            console.error(err);
+            alert("Error de conexión: " + err.message);
+            btn.disabled = false;
+            btn.textContent = "Ingresar";
+        }
+    });
+
+    // Registrar nuevo administrador (Solo Super-Admin)
+    document.getElementById('new-admin-form').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const newEmail = document.getElementById('new-admin-email').value.trim();
+        const newPass = document.getElementById('new-admin-pass').value;
+        const statusDiv = document.getElementById('admin-create-status');
+
+        try {
+            const { data, error } = await supabase.rpc('create_new_admin', {
+                new_email: newEmail,
+                new_password: newPass,
+                requester_email: currentAdmin.email
+            });
+
+            if (error) throw error;
+
+            if (data) {
+                statusDiv.style.color = "#28a745";
+                statusDiv.innerHTML = `<strong>Éxito:</strong> Admin ${newEmail} registrado correctamente.`;
+                this.reset();
+            } else {
+                throw new Error("No se pudo registrar el administrador.");
+            }
+        } catch (err) {
+            statusDiv.style.color = "#dc3545";
+            statusDiv.textContent = "Error: " + err.message;
         }
     });
 
@@ -323,7 +447,8 @@
         if (error) throw error;
         
         allRegistrations = data;
-        renderDashboard(allRegistrations);
+        filteredRegistrations = [...allRegistrations];
+        renderDashboard(filteredRegistrations);
     }
 
     document.getElementById('admin-pass').addEventListener('keypress', function (e) {
@@ -411,32 +536,47 @@
       });
     }
 
-    // Filtros de fecha
+    // Filtros Avanzados (Multi-columna)
     document.getElementById('btn-filter').addEventListener('click', () => {
       const startStr = document.getElementById('date-start').value;
       const endStr = document.getElementById('date-end').value;
+      const selectedCountry = document.getElementById('filter-country').value;
+      const selectedSize = document.getElementById('filter-size').value;
+      const selectedArea = document.getElementById('filter-specialization').value;
+      const selectedIndustry = document.getElementById('filter-industry').value;
+      const selectedInterest = document.getElementById('filter-interest').value;
       
       let filtered = allRegistrations.filter(row => {
         const d = new Date(row.created_at);
         d.setHours(0,0,0,0);
         const time = d.getTime();
         
+        // Filtro Fecha
         if(startStr && time < new Date(startStr + "T00:00:00").getTime()) return false;
         if(endStr && time > new Date(endStr + "T23:59:59").getTime()) return false;
+        
+        // Filtros de campos
+        if(selectedCountry && row.country !== selectedCountry) return false;
+        if(selectedSize && row.company_size !== selectedSize) return false;
+        if(selectedArea && row.specialization !== selectedArea) return false;
+        if(selectedIndustry && row.industry !== selectedIndustry) return false;
+        if(selectedInterest && row.interest !== selectedInterest) return false;
+
         return true;
       });
       
-      renderDashboard(filtered);
+      filteredRegistrations = filtered;
+      renderDashboard(filteredRegistrations);
     });
 
-    // Lógica para exportar CSV (Registros)
+    // Lógica para exportar CSV (Registros Filtrados)
     document.querySelector('.btn-export-csv').addEventListener('click', () => {
-        if(allRegistrations.length === 0) return alert("No hay datos para exportar");
+        if(filteredRegistrations.length === 0) return alert("No hay datos filtrados para exportar");
         
         const headers = ["Fecha", "Nombre", "Apellido", "Email", "Teléfono", "Posición", "Ciudad", "País", "Empresa", "Tamaño Empresa", "Industria", "Área Especialización", "Interés Guía"];
         let csvContent = headers.join(",") + "\n";
 
-        allRegistrations.forEach(row => {
+        filteredRegistrations.forEach(row => {
             const d = new Date(row.created_at);
             const dateStr = `${d.getFullYear()}-${d.getMonth()+1}-${d.getDate()}`;
             const escapeCsv = (str) => `"${String(str || '').replace(/"/g, '""')}"`;
