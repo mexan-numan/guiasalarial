@@ -55,6 +55,35 @@ EXCEPTION
 END;
 $$ LANGUAGE plpgsql SECURITY DEFINER;
 
--- 5. Activar Seguridad de Nivel de Fila (RLS)
+-- 5. Función para listar todos los administradores (Solo Superusuarios)
+CREATE OR REPLACE FUNCTION get_all_admins(requester_email text)
+RETURNS TABLE (email text, is_superuser boolean, created_at timestamptz) AS $$
+DECLARE
+    is_super boolean;
+BEGIN
+    SELECT admins.is_superuser INTO is_super FROM admins WHERE admins.email = requester_email;
+    
+    IF is_super THEN
+        RETURN QUERY SELECT admins.email, admins.is_superuser, admins.created_at FROM admins;
+    ELSE
+        RAISE EXCEPTION 'No tienes permisos para ver la lista de administradores.';
+    END IF;
+END;
+$$ LANGUAGE plpgsql SECURITY DEFINER;
+
+-- 6. Función para obtener registros de candidatos (Solo Admins)
+CREATE OR REPLACE FUNCTION get_admin_registrations(requester_email text, requester_password text)
+RETURNS SETOF registrations AS $$
+BEGIN
+    -- Validar credenciales del admin
+    IF EXISTS (SELECT 1 FROM admins WHERE email = requester_email AND password = requester_password) THEN
+        RETURN QUERY SELECT * FROM registrations ORDER BY created_at DESC;
+    ELSE
+        RAISE EXCEPTION 'Acceso denegado: Credenciales de administrador inválidas.';
+    END IF;
+END;
+$$ LANGUAGE plpgsql SECURITY DEFINER;
+
+-- 7. Activar Seguridad de Nivel de Fila (RLS)
 -- Al no crear políticas públicas, nadie con el 'anon' key puede leer la tabla directamente.
 ALTER TABLE admins ENABLE ROW LEVEL SECURITY;

@@ -3,741 +3,560 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin - Descarga de Registros</title>
+  <title>Numan - Admin Dashboard</title>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <style>
-    body {
-      background-color: var(--bg-color);
-      margin: 0;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
+    :root {
+      --sidebar-width: 260px;
+      --sidebar-bg: #111827;
+      --sidebar-hover: #1f2937;
+      --numan-red: #df0f3b;
+      --numan-blue: #214496;
+      --numan-green: #8CC63F;
+      --bg-light: #f9fafb;
+      --white: #ffffff;
+      --text-main: #111827;
+      --text-muted: #6b7280;
+      --border-color: #e5e7eb;
     }
-    .admin-panel {
-      background: var(--white);
-      padding: 40px;
-      border-radius: 8px;
-      box-shadow: var(--shadow);
-      max-width: 1200px; /* Expanded for dashboard */
-      width: 95%;
-      margin: 40px auto; /* Allows scrolling and centers horizontally */
-    }
-    .admin-panel h2 {
-      margin-bottom: 20px;
-      color: var(--header-bg);
-    }
-    .form-group {
-      margin-bottom: 20px;
-      text-align: left;
-    }
-    .form-control {
-      width: 100%;
-      padding: 12px;
-      border: 1px solid var(--border-color);
-      border-radius: 4px;
-      font-family: inherit;
-    }
-    .btn-submit {
-      width: 100%;
-      background-color: var(--numan-red);
-      color: var(--white);
-      border: none;
-      padding: 12px;
-      font-size: 16px;
-      border-radius: 4px;
-      cursor: pointer;
-      font-weight: 600;
-      transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
-    }
-    .btn-submit:hover {
-      background-color: #c90932;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 8px rgba(223, 15, 59, 0.3);
-    }
-    .btn-submit:disabled {
-      background-color: #ccc;
-      cursor: not-allowed;
-    }
-    #login-section {
-      max-width: 400px; /* Keep login small */
-      text-align: center;
-      margin: auto; /* Since body is flex column, this centers it on the screen */
-    }
-    #export-section {
-      display: none;
-      text-align: left;
-    }
-    .dashboard-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 30px;
-      flex-wrap: wrap;
-      gap: 15px;
-    }
-    .kpi-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-      margin-bottom: 30px;
-    }
-    .kpi-card {
-      background: #f8f9fa;
-      border-left: 4px solid var(--numan-blue, #214496);
-      padding: 20px;
-      border-radius: 6px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    }
-    .kpi-title {
-      font-size: 14px;
-      color: #666;
-      text-transform: uppercase;
-      font-weight: 600;
-      margin-bottom: 5px;
-    }
-    .kpi-value {
-      font-size: 32px;
-      color: var(--header-bg);
-      font-weight: 700;
-      line-height: 1;
-    }
-    .filters-section {
-      background: #f8f9fa;
-      padding: 20px;
-      border-radius: 6px;
-      margin-bottom: 30px;
-      display: flex;
-      gap: 20px;
-      align-items: flex-end;
-      flex-wrap: wrap;
-    }
-    .filter-group {
-      display: flex;
-      flex-direction: column;
-      flex: 1;
-      min-width: 150px;
-    }
-    .filter-group label {
-      font-size: 14px;
-      color: #666;
-      margin-bottom: 8px;
-      font-weight: 600;
-    }
-    .filter-group input {
-      padding: 10px;
-      border: 1px solid var(--border-color);
-      border-radius: 4px;
-      font-family: inherit;
-    }
-    .chart-container {
-      margin-bottom: 40px;
-      height: 300px;
-      width: 100%;
-    }
-    .table-responsive {
-      overflow-x: auto;
-      margin-bottom: 30px;
-    }
-    .preview-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 14px;
-    }
-    
-    .global-footer {
-      margin-top: auto; /* Push footer to the very bottom */
-      width: 100%;
-    }
-    .preview-table th {
-      background: var(--numan-blue, #214496);
-      color: white;
-      padding: 12px;
-      text-align: left;
-    }
-    .preview-table td {
-      padding: 12px;
-      border-bottom: 1px solid #eee;
-    }
-    .preview-table tbody tr:hover {
-      background-color: #f5f5f5;
-    }
-    .success-msg {
-      color: #28a745;
-      font-size: 14px;
-      margin-top: 15px;
-      display: none;
-    }
-    .logout-link {
-        display: block;
-        margin-top: 20px;
-        font-size: 12px;
-        color: #666;
-        text-decoration: underline;
-        cursor: pointer;
-    }
-  </style>
 
-  <!-- Chart.js -->
+    body {
+      background-color: var(--bg-light);
+      margin: 0;
+      font-family: 'Outfit', sans-serif;
+      color: var(--text-main);
+    }
+
+    /* Login Overlay */
+    #login-section {
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background: #f3f4f6; z-index: 2000;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .login-box {
+      width: 100%; max-width: 400px; background: white; padding: 40px;
+      border-radius: 20px; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    /* Dashboard Layout */
+    .dashboard-layout {
+      display: flex;
+      min-height: 100vh;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: var(--sidebar-width);
+      background: var(--sidebar-bg);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      height: 100vh;
+    }
+    .sidebar-header { padding: 30px 25px; border-bottom: 1px solid #374151; }
+    .sidebar-header img { width: 140px; filter: brightness(0) invert(1); }
+    
+    .sidebar-nav { flex-grow: 1; padding: 20px 0; }
+    .nav-link {
+      padding: 14px 25px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #9ca3af;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.2s;
+      cursor: pointer;
+    }
+    .nav-link svg { width: 20px; height: 20px; }
+    .nav-link:hover { background: var(--sidebar-hover); color: white; }
+    .nav-link.active {
+      background: var(--numan-red);
+      color: white;
+    }
+
+    .sidebar-footer { padding: 20px; border-top: 1px solid #374151; }
+
+    /* Main Content */
+    .main-content {
+      margin-left: var(--sidebar-width);
+      flex-grow: 1;
+      padding: 40px;
+      background: var(--bg-light);
+    }
+
+    .view-section { display: none; animation: fadeIn 0.3s ease; }
+    .view-section.active { display: block; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* UI Components */
+    .kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; margin-bottom: 32px; }
+    .kpi-card { background: white; padding: 24px; border-radius: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); border: 1px solid var(--border-color); }
+    .kpi-label { color: var(--text-muted); font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.025em; }
+    .kpi-value { font-size: 32px; font-weight: 700; margin-top: 8px; color: var(--numan-blue); }
+
+    .card { background: white; padding: 30px; border-radius: 16px; border: 1px solid var(--border-color); margin-bottom: 30px; }
+    
+    .btn-submit {
+      background: var(--numan-red); color: white; border: none; padding: 12px 24px;
+      border-radius: 10px; font-weight: 600; cursor: pointer; transition: all 0.2s;
+    }
+    .btn-submit:hover { opacity: 0.9; transform: translateY(-1px); }
+
+    .form-control {
+      width: 100%; padding: 12px; border-radius: 10px; border: 1px solid var(--border-color);
+      font-family: inherit; font-size: 14px; box-sizing: border-box;
+    }
+
+    /* Tables */
+    .table-container { overflow-x: auto; border-radius: 12px; border: 1px solid var(--border-color); }
+    .data-table { width: 100%; border-collapse: collapse; text-align: left; }
+    .data-table th { background: #f9fafb; padding: 16px; color: var(--text-muted); font-size: 13px; font-weight: 600; }
+    .data-table td { padding: 16px; border-top: 1px solid var(--border-color); font-size: 14px; }
+  </style>
+  
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <!-- Supabase JS Client -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <!-- PapaParse for CSV parsing -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
   <script src="supabase-config.js"></script>
-
 </head>
 <body>
 
-  <div class="admin-panel" id="login-section">
-    <h2>Acceso Administrador</h2>
-    <p style="font-size: 14px; color: #666; margin-bottom: 20px;">Ingresa tus credenciales para gestionar la base de datos.</p>
-    
-    <div class="form-group">
-      <input type="email" id="admin-email" class="form-control" placeholder="Email (ej. ricardo.garrido@numan.la)">
+  <!-- Login Section -->
+  <div id="login-section">
+    <div class="login-box">
+      <img src="https://numan.la/wp-content/uploads/2025/03/industrial_headhunting2.png" alt="Numan" style="width: 140px; margin-bottom: 24px;">
+      <h2 style="margin-bottom: 8px;">Dashboard Admin</h2>
+      <p style="color: var(--text-muted); margin-bottom: 32px;">Panel de Gestión Numan 2026</p>
+      
+      <div style="text-align: left; margin-bottom: 20px;">
+        <label style="font-size: 13px; font-weight: 600;">EMAIL</label>
+        <input type="email" id="admin-email" class="form-control" style="margin-top: 6px;" placeholder="ricardo.garrido@numan.la">
+      </div>
+      <div style="text-align: left; margin-bottom: 30px;">
+        <label style="font-size: 13px; font-weight: 600;">CONTRASEÑA</label>
+        <input type="password" id="admin-pass" class="form-control" style="margin-top: 6px;" placeholder="••••••••">
+      </div>
+      <button id="btn-login" class="btn-submit" style="width: 100%;">Entrar al Sistema</button>
     </div>
-    <div class="form-group">
-      <input type="password" id="admin-pass" class="form-control" placeholder="Contraseña">
-    </div>
-    <button id="btn-login" class="btn-submit">Ingresar</button>
   </div>
 
-  <div class="admin-panel" id="export-section">
-    <div class="dashboard-header">
-      <div>
-        <h2>Panel de Control Numan</h2>
-        <p style="font-size: 14px; color: #666;">Analíticas, descarga de registros y actualización de salarios.</p>
+  <!-- Main Dashboard Container -->
+  <div class="dashboard-layout" id="main-dashboard" style="display: none;">
+    <!-- Sidebar -->
+    <nav class="sidebar">
+      <div class="sidebar-header">
+        <img src="https://numan.la/wp-content/uploads/2025/03/industrial_headhunting2.png" alt="Numan Dashboard">
       </div>
-      <div>
-        <button class="btn-submit btn-export-csv" style="width: auto; padding: 10px 20px; font-size: 14px; background-color: var(--numan-blue);"><svg style="width:16px; height:16px; vertical-align:middle; margin-right:5px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg> Descargar Registros (CSV)</button>
-        <a class="logout-link" onclick="location.reload()" style="display: inline-block; margin-left:15px; margin-top:0;">Cerrar sesión</a>
-        <div id="status-msg" class="success-msg" style="position: absolute; display: none;"></div>
-      </div>
-    </div>
-
-    <!-- Gestión de Salarios (Nueva Sección) -->
-    <div style="background: #f0f4f8; padding: 25px; border-radius: 8px; margin-bottom: 30px; border: 1px solid #d1d9e0;">
-      <h3 style="margin-top: 0; font-size: 18px; color: var(--numan-blue); display: flex; align-items: center;">
-        <svg style="width:20px; height:20px; margin-right:10px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
-        Actualizar Tabla de Salarios
-      </h3>
-      <p style="font-size: 13px; color: #555; margin-bottom: 15px;">Sube un archivo .CSV para reemplazar todos los datos de salarios actuales. El formato debe ser: <b>País; Tamaño; Área; Seniority; Ubicación; Posición; Moneda; Salario Min; Salario Max</b></p>
-      <div style="display: flex; gap: 15px; align-items: center; flex-wrap: wrap;">
-        <input type="file" id="csv-upload" accept=".csv" style="font-size: 14px;">
-        <button id="btn-upload-salaries" class="btn-submit" style="width: auto; padding: 8px 25px; background-color: #8CC63F;">Subir y Reemplazar Datos</button>
-      </div>
-      <div id="upload-status" style="margin-top: 10px; font-size: 13px; font-weight: 600;"></div>
-    </div>
-
-    <!-- Filtros Avanzados -->
-    <div class="filters-section" style="background: white; border: 1px solid #eee; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
-        <div class="filter-group">
-            <label for="date-start">Fecha Inicio</label>
-            <input type="date" id="date-start" class="form-control">
+      <div class="sidebar-nav">
+        <div class="nav-link active" onclick="showView('view-overview', this)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          Vista General
         </div>
-        <div class="filter-group">
-            <label for="date-end">Fecha Fin</label>
-            <input type="date" id="date-end" class="form-control">
+        <div class="nav-link" onclick="showView('view-candidates', this)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          Candidatos
         </div>
-        <div class="filter-group">
-            <label for="filter-country">País</label>
-            <select id="filter-country" class="form-control">
-                <option value="">Todos</option>
-                <option value="México">México</option>
-                <option value="Colombia">Colombia</option>
-                <option value="Perú">Perú</option>
-                <option value="Argentina">Argentina</option>
+        <div class="nav-link" id="nav-admins" onclick="showView('view-admins', this)" style="display: none;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          Administradores
+        </div>
+        <div class="nav-link" onclick="showView('view-database', this)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+          Base de Sueldos
+        </div>
+      </div>
+      <div class="sidebar-footer">
+        <button onclick="location.reload()" style="width: 100%; color: #9ca3af; background: transparent; border: 1px solid #374151; padding: 10px; border-radius: 8px; cursor: pointer;">Cerrar Sesión</button>
+      </div>
+    </nav>
+
+    <!-- Content -->
+    <main class="main-content">
+      
+      <!-- VIEW 1: OVERVIEW -->
+      <section id="view-overview" class="view-section active">
+        <header style="margin-bottom: 40px;">
+          <h1 style="font-size: 28px; margin: 0;">Resumen General</h1>
+          <p style="color: var(--text-muted);">Estadísticas clave de la plataforma</p>
+        </header>
+
+        <div class="kpi-grid">
+          <div class="kpi-card" style="border-top: 4px solid var(--numan-blue);">
+            <div class="kpi-label">Sueldos en BD</div>
+            <div class="kpi-value" id="kpi-salaries">0</div>
+          </div>
+          <div class="kpi-card" style="border-top: 4px solid var(--numan-red);">
+            <div class="kpi-label">Registrados</div>
+            <div class="kpi-value" id="kpi-registrations">0</div>
+          </div>
+          <div class="kpi-card" style="border-top: 4px solid var(--numan-green);">
+            <div class="kpi-label">Administradores</div>
+            <div class="kpi-value" id="kpi-admins">0</div>
+          </div>
+          <div class="kpi-card" style="border-top: 4px solid #f59e0b;">
+            <div class="kpi-label">Tráfico Estimado</div>
+            <div class="kpi-value" id="kpi-traffic">0</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3 style="margin-top: 0; margin-bottom: 25px;">Tendencia de Registros (30 días)</h3>
+          <canvas id="trendChart" height="300"></canvas>
+        </div>
+      </section>
+
+      <!-- VIEW 2: CANDIDATES -->
+      <section id="view-candidates" class="view-section">
+        <header style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px;">
+          <div>
+            <h1 style="font-size: 28px; margin: 0;">Detalle de Candidatos</h1>
+            <p style="color: var(--text-muted);">Visualiza y filtra los registros de usuarios</p>
+          </div>
+          <button id="btn-export-full" class="btn-submit" style="background: var(--numan-blue);">Descargar CSV Filtrado</button>
+        </header>
+
+        <div class="card" style="padding: 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; align-items: flex-end;">
+          <div>
+            <label style="font-size: 13px; font-weight: 600;">PAÍS</label>
+            <select id="f-country" class="form-control" style="margin-top: 6px;">
+              <option value="">Todos</option>
+              <option value="México">México</option>
+              <option value="Colombia">Colombia</option>
+              <option value="Perú">Perú</option>
+              <option value="Argentina">Argentina</option>
             </select>
-        </div>
-        <div class="filter-group">
-            <label for="filter-size">Tamaño Empresa</label>
-            <select id="filter-size" class="form-control">
-                <option value="">Todos</option>
-                <option value="pequena">Pequeña</option>
-                <option value="mediana">Mediana</option>
-                <option value="grande">Grande</option>
+          </div>
+          <div>
+            <label style="font-size: 13px; font-weight: 600;">ÁREA</label>
+            <select id="f-area" class="form-control" style="margin-top: 6px;">
+              <option value="">Todas</option>
+              <option value="Ingeniería">Ingeniería</option>
+              <option value="Supply Chain">Supply Chain</option>
+              <option value="Manufactura">Manufactura</option>
             </select>
+          </div>
+          <div>
+            <button onclick="applyFilters()" class="btn-submit" style="width: 100%;">Aplicar Filtros</button>
+          </div>
         </div>
-        <div class="filter-group">
-            <label for="filter-specialization">Área</label>
-            <select id="filter-specialization" class="form-control">
-                <option value="">Todos</option>
-                <option value="Ingeniería">Ingeniería</option>
-                <option value="Supply Chain">Supply Chain</option>
-                <option value="Manufactura">Manufactura</option>
-                <option value="Compras">Compras</option>
-                <option value="Operaciones">Operaciones</option>
-                <option value="Recursos humanos">Recursos humanos</option>
-                <option value="Finanzas (Planta)">Finanzas (Planta)</option>
-            </select>
-        </div>
-        <div class="filter-group">
-            <label for="filter-industry">Industria</label>
-            <select id="filter-industry" class="form-control">
-                <option value="">Todas</option>
-                <option value="Industria Automotriz">Automotriz</option>
-                <option value="Industria Electrónica">Electrónica</option>
-                <option value="Industria de Alimentos y Bebidas">Alimentos y Bebidas</option>
-                <option value="Tecnologías de la Información y Software">Tecnología/IT</option>
-            </select>
-        </div>
-        <div class="filter-group">
-            <label for="filter-interest">Interés</label>
-            <select id="filter-interest" class="form-control">
-                <option value="">Todos</option>
-                <option value="contratar">Contratar talento</option>
-                <option value="buscar_empleo">Buscar empleo</option>
-                <option value="benchmarking">Benchmarking salarial</option>
-            </select>
-        </div>
-        <div class="filter-group" style="flex: 0 0 auto;">
-            <button id="btn-filter" class="btn-submit" style="background:#214496; padding: 10px 25px; margin-top:28px;">Filtrar</button>
-        </div>
-    </div>
 
-    <!-- KPIs -->
-    <div class="kpi-grid">
-      <div class="kpi-card">
-        <div class="kpi-title">Total Registros</div>
-        <div class="kpi-value" id="kpi-total">0</div>
-      </div>
-      <div class="kpi-card">
-        <div class="kpi-title">Registros Hoy</div>
-        <div class="kpi-value" id="kpi-today">0</div>
-      </div>
-      <div class="kpi-card" style="border-left-color: #8CC63F;">
-        <div class="kpi-title">Últimos 7 Días</div>
-        <div class="kpi-value" id="kpi-week">0</div>
-      </div>
-    </div>
+        <div class="table-container card" style="padding: 0;">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Fecha</th>
+                <th>Nombre Completos</th>
+                <th>Email</th>
+                <th>País</th>
+                <th>Industria</th>
+              </tr>
+            </thead>
+            <tbody id="candidates-rows">
+              <tr><td colspan="5" style="text-align: center; padding: 40px;">Cargando...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
 
-    <!-- Gráfico -->
-    <h3 style="margin-bottom: 15px; font-size: 18px; color: var(--header-bg);">Actividad de Registros</h3>
-    <div class="chart-container">
-      <canvas id="registrationsChart"></canvas>
-    </div>
+      <!-- VIEW 3: ADMINS -->
+      <section id="view-admins" class="view-section">
+        <header style="margin-bottom: 40px;">
+          <h1 style="font-size: 28px; margin: 0;">Gestión de Administradores</h1>
+          <p style="color: var(--text-muted);">Usuarios autorizados para acceder al panel</p>
+        </header>
 
-    <!-- Tabla de Previsualización -->
-    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
-      <h3 style="font-size: 18px; color: var(--header-bg); margin: 0;">Últimos 50 Registros</h3>
-    </div>
-    <div class="table-responsive">
-      <table class="preview-table">
-        <thead>
-          <tr>
-            <th>Fecha</th>
-            <th>Nombre</th>
-            <th>Email</th>
-            <th>Empresa</th>
-            <th>Posición</th>
-            <th>País</th>
-          </tr>
-        </thead>
-        <tbody id="preview-tbody">
-          <tr><td colspan="6" style="text-align:center;">Cargando datos...</td></tr>
-        </tbody>
-      </table>
-    </div>
-
-    <!-- Gestión de Administradores (Solo Super-Admin) -->
-    <div id="admin-management-section" style="display: none; background: #fff; padding: 25px; border-radius: 8px; border: 1px solid #eee; margin-top: 40px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
-        <h3 style="margin-top: 0; color: var(--numan-red); display: flex; align-items: center;">
-            <svg style="width:20px; height:20px; margin-right:10px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="17" y1="11" x2="23" y2="11"/></svg>
-            Gestión de Usuarios Administradores
-        </h3>
-        <p style="font-size: 13px; color: #666; margin-bottom: 20px;">Como Super-Admin, puedes registrar nuevos administradores para este panel.</p>
-        
-        <form id="new-admin-form" style="display: grid; grid-template-columns: 1fr 1fr 150px; gap: 20px; align-items: flex-end;">
-            <div class="filter-group">
-                <label>Email del Nuevo Admin</label>
-                <input type="email" id="new-admin-email" class="form-control" placeholder="ej. colega@numan.la" required>
+        <div class="card" id="admin-creation-block" style="display: none; background: #f9fafb; border-style: dashed;">
+          <h3 style="margin-top: 0;">Registrar Nuevo Usuario</h3>
+          <form id="form-create-admin" style="display: flex; gap: 20px; align-items: flex-end;">
+            <div style="flex: 1;">
+              <label style="font-size: 13px; font-weight: 600;">EMAIL</label>
+              <input type="email" id="new-admin-email" class="form-control" required style="margin-top: 6px;">
             </div>
-            <div class="filter-group">
-                <label>Contraseña Temporal</label>
-                <input type="password" id="new-admin-pass" class="form-control" placeholder="Mínimo 6 caracteres" required>
+            <div style="flex: 1;">
+              <label style="font-size: 13px; font-weight: 600;">CONTRASEÑA TEMPORAL</label>
+              <input type="password" id="new-admin-password" class="form-control" required style="margin-top: 6px;">
             </div>
-            <button type="submit" class="btn-submit" style="background: #8CC63F;">Registrar</button>
-        </form>
-        <div id="admin-create-status" style="margin-top: 15px; font-size: 13px; font-weight: 600;"></div>
-    </div>
+            <button type="submit" class="btn-submit" style="background: var(--numan-green);">Registrar</button>
+          </form>
+          <div id="admin-status-msg" style="margin-top: 15px; font-size: 14px; font-weight: 600;"></div>
+        </div>
 
+        <div class="table-container card" style="padding: 0;">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Email del Administrador</th>
+                <th>Superuser</th>
+                <th>Fecha Creación</th>
+              </tr>
+            </thead>
+            <tbody id="admins-rows">
+              <tr><td colspan="3" style="text-align: center; padding: 40px;">Cargando...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- VIEW 4: DATABASE -->
+      <section id="view-database" class="view-section">
+        <header style="margin-bottom: 40px;">
+          <h1 style="font-size: 28px; margin: 0;">Base de Datos de Sueldos</h1>
+          <p style="color: var(--text-muted);">Mantenimiento de los datos del calculador</p>
+        </header>
+
+        <div class="card" style="display: flex; gap: 30px; align-items: flex-start;">
+          <div style="flex: 1;">
+            <h3>Subida Masiva (CSV)</h3>
+            <p style="color: var(--text-muted); font-size: 14px; line-height: 1.6;">Esta acción reemplazará **todos** los datos de salarios por el contenido del nuevo archivo. Asegúrate de que el formato respete exactamente el orden de las columnas originales.</p>
+            
+            <div style="margin-top: 30px; padding: 20px; background: #f3f4f6; border-radius: 12px;">
+              <input type="file" id="db-upload-input" accept=".csv" style="display: block; margin-bottom: 20px;">
+              <button id="btn-db-upload" class="btn-submit" style="background: var(--numan-blue);">Subir y Reemplazar Datos</button>
+              <div id="db-upload-status" style="margin-top: 15px; font-size: 14px; font-weight: 600;"></div>
+            </div>
+          </div>
+          <div style="flex: 0 0 300px; background: #eef2ff; border-radius: 16px; padding: 25px;">
+            <svg style="width: 40px; height: 40px; color: var(--numan-blue); margin-bottom: 15px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+            <h4 style="margin: 0 0 10px 0;">Formato CSV requerido</h4>
+            <p style="font-size: 12px; color: #4338ca; line-height: 1.5; margin: 0;">Separador: <b>Coma o Punto y Coma</b><br>1. País<br>2. Tamaño (empresa)<br>3. Área<br>4. Seniority<br>5. Ubicación<br>6. Posición<br>7. Moneda<br>8. Salario Min<br>9. Salario Max</p>
+          </div>
+        </div>
+      </section>
+
+    </main>
   </div>
 
   <script>
     let currentAdmin = null;
+    let adminAuthPass = ""; // In-memory only
     let allRegistrations = [];
     let filteredRegistrations = [];
     let chartInstance = null;
 
+    // View Switching Logic
+    function showView(viewId, element) {
+      document.querySelectorAll('.view-section').forEach(v => v.classList.remove('active'));
+      document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+      
+      document.getElementById(viewId).classList.add('active');
+      element.classList.add('active');
+      
+      if(viewId === 'view-overview') refreshOverview();
+      if(viewId === 'view-admins') loadAdminList();
+    }
+
+    // Login logic
     document.getElementById('btn-login').addEventListener('click', async () => {
-        const email = document.getElementById('admin-email').value.trim();
-        const pass = document.getElementById('admin-pass').value;
-        const btn = document.getElementById('btn-login');
-        
-        btn.disabled = true;
-        btn.textContent = "Validando...";
-
-        try {
-            const { data, error } = await supabase.rpc('verify_admin_login', {
-                input_email: email,
-                input_password: pass
-            });
-
-            if (error) throw error;
-
-            if(data && data.success) {
-                currentAdmin = data;
-                document.getElementById('login-section').style.display = 'none';
-                document.getElementById('export-section').style.display = 'block';
-                
-                // Mostrar gestión si es super-admin
-                if (currentAdmin.is_superuser) {
-                    document.getElementById('admin-management-section').style.display = 'block';
-                }
-
-                await loadRegistrations();
-            } else {
-                alert("Credenciales incorrectas. Verifica el email y contraseña.");
-                btn.disabled = false;
-                btn.textContent = "Ingresar";
-            }
-        } catch (err) {
-            console.error(err);
-            alert("Error de conexión: " + err.message);
-            btn.disabled = false;
-            btn.textContent = "Ingresar";
-        }
-    });
-
-    // Registrar nuevo administrador (Solo Super-Admin)
-    document.getElementById('new-admin-form').addEventListener('submit', async function(e) {
-        e.preventDefault();
-        const newEmail = document.getElementById('new-admin-email').value.trim();
-        const newPass = document.getElementById('new-admin-pass').value;
-        const statusDiv = document.getElementById('admin-create-status');
-
-        try {
-            const { data, error } = await supabase.rpc('create_new_admin', {
-                new_email: newEmail,
-                new_password: newPass,
-                requester_email: currentAdmin.email
-            });
-
-            if (error) throw error;
-
-            if (data) {
-                statusDiv.style.color = "#28a745";
-                statusDiv.innerHTML = `<strong>Éxito:</strong> Admin ${newEmail} registrado correctamente.`;
-                this.reset();
-            } else {
-                throw new Error("No se pudo registrar el administrador.");
-            }
-        } catch (err) {
-            statusDiv.style.color = "#dc3545";
-            statusDiv.textContent = "Error: " + err.message;
-        }
-    });
-
-    async function loadRegistrations() {
-        const { data, error } = await supabase
-          .from('registrations')
-          .select('*')
-          .order('created_at', { ascending: false });
-
-        if (error) throw error;
-        
-        allRegistrations = data;
-        filteredRegistrations = [...allRegistrations];
-        renderDashboard(filteredRegistrations);
-    }
-
-    document.getElementById('admin-pass').addEventListener('keypress', function (e) {
-        if (e.key === 'Enter') {
-            document.getElementById('btn-login').click();
-        }
-    });
-
-    function renderDashboard(dataArray) {
-      if(!dataArray || dataArray.length === 0) {
-        document.getElementById('preview-tbody').innerHTML = '<tr><td colspan="6" style="text-align:center;">No hay registros encontrados.</td></tr>';
-        updateKPIs(0, 0, 0);
-        return;
-      }
+      const email = document.getElementById('admin-email').value.trim();
+      const pass = document.getElementById('admin-pass').value;
+      const btn = document.getElementById('btn-login');
       
-      const now = new Date();
-      now.setHours(0,0,0,0);
-      const oneWeekAgo = new Date(now);
-      oneWeekAgo.setDate(oneWeekAgo.getDate() - 7);
-      
-      let countToday = 0;
-      let countWeek = 0;
-      const chartDataMap = {};
+      btn.disabled = true;
+      btn.textContent = "Verificando...";
 
-          const tableRows = dataArray.slice(0, 50).map(row => {
-            const dateObj = new Date(row.created_at);
-            const dateStr = `${dateObj.getFullYear()}-${String(dateObj.getMonth()+1).padStart(2,'0')}-${String(dateObj.getDate()).padStart(2,'0')} ${String(dateObj.getHours()).padStart(2,'0')}:${String(dateObj.getMinutes()).padStart(2,'0')}`;
-            const dateChartKey = dateStr.split(' ')[0];
-            
-            const dCompare = new Date(dateObj);
-            dCompare.setHours(0,0,0,0);
-            
-            if(dCompare.getTime() === now.getTime()) countToday++;
-            if(dCompare.getTime() >= oneWeekAgo.getTime()) countWeek++;
-
-            chartDataMap[dateChartKey] = (chartDataMap[dateChartKey] || 0) + 1;
-
-            return `
-              <tr>
-                <td>${dateStr}</td>
-                <td>${row.first_name || ''} ${row.last_name || ''}</td>
-                <td>${row.email || ''}</td>
-                <td>${row.company || ''}</td>
-                <td>${row.position || ''}</td>
-                <td>${row.country || ''}</td>
-              </tr>
-            `;
-          });
-          
-          updateKPIs(dataArray.length, countToday, countWeek);
-          document.getElementById('preview-tbody').innerHTML = tableRows.join('');
-          renderChart(chartDataMap);
-        }
-    
-    function updateKPIs(total, today, week) {
-      document.getElementById('kpi-total').textContent = total;
-      document.getElementById('kpi-today').textContent = today;
-      document.getElementById('kpi-week').textContent = week;
-    }
-    
-    function renderChart(chartDataMap) {
-      const ctx = document.getElementById('registrationsChart').getContext('2d');
-      const labels = Object.keys(chartDataMap).sort((a,b) => new Date(a) - new Date(b));
-      const dataPoints = labels.map(l => chartDataMap[l]);
-
-      if (chartInstance) chartInstance.destroy();
-
-      chartInstance = new Chart(ctx, {
-          type: 'bar',
-          data: {
-              labels: labels,
-              datasets: [{
-                  label: 'Registros',
-                  data: dataPoints,
-                  backgroundColor: '#214496',
-                  borderRadius: 4
-              }]
-          },
-          options: {
-              responsive: true,
-              maintainAspectRatio: false,
-              plugins: { legend: { display: false } },
-              scales: { y: { beginAtZero: true, ticks: { precision: 0 } } }
-          }
-      });
-    }
-
-    // Filtros Avanzados (Multi-columna)
-    document.getElementById('btn-filter').addEventListener('click', () => {
-      const startStr = document.getElementById('date-start').value;
-      const endStr = document.getElementById('date-end').value;
-      const selectedCountry = document.getElementById('filter-country').value;
-      const selectedSize = document.getElementById('filter-size').value;
-      const selectedArea = document.getElementById('filter-specialization').value;
-      const selectedIndustry = document.getElementById('filter-industry').value;
-      const selectedInterest = document.getElementById('filter-interest').value;
-      
-      let filtered = allRegistrations.filter(row => {
-        const d = new Date(row.created_at);
-        d.setHours(0,0,0,0);
-        const time = d.getTime();
-        
-        // Filtro Fecha
-        if(startStr && time < new Date(startStr + "T00:00:00").getTime()) return false;
-        if(endStr && time > new Date(endStr + "T23:59:59").getTime()) return false;
-        
-        // Filtros de campos
-        if(selectedCountry && row.country !== selectedCountry) return false;
-        if(selectedSize && row.company_size !== selectedSize) return false;
-        if(selectedArea && row.specialization !== selectedArea) return false;
-        if(selectedIndustry && row.industry !== selectedIndustry) return false;
-        if(selectedInterest && row.interest !== selectedInterest) return false;
-
-        return true;
-      });
-      
-      filteredRegistrations = filtered;
-      renderDashboard(filteredRegistrations);
-    });
-
-    // Lógica para exportar CSV (Registros Filtrados)
-    document.querySelector('.btn-export-csv').addEventListener('click', () => {
-        if(filteredRegistrations.length === 0) return alert("No hay datos filtrados para exportar");
-        
-        const headers = ["Fecha", "Nombre", "Apellido", "Email", "Teléfono", "Posición", "Ciudad", "País", "Empresa", "Tamaño Empresa", "Industria", "Área Especialización", "Interés Guía"];
-        let csvContent = headers.join(",") + "\n";
-
-        filteredRegistrations.forEach(row => {
-            const d = new Date(row.created_at);
-            const dateStr = `${d.getFullYear()}-${d.getMonth()+1}-${d.getDate()}`;
-            const escapeCsv = (str) => `"${String(str || '').replace(/"/g, '""')}"`;
-            
-            const rowData = [
-                escapeCsv(dateStr),
-                escapeCsv(row.first_name),
-                escapeCsv(row.last_name),
-                escapeCsv(row.email),
-                escapeCsv(row.phone),
-                escapeCsv(row.position),
-                escapeCsv(row.city),
-                escapeCsv(row.country),
-                escapeCsv(row.company),
-                escapeCsv(row.company_size),
-                escapeCsv(row.industry),
-                escapeCsv(row.specialization),
-                escapeCsv(row.interest)
-            ];
-            csvContent += rowData.join(",") + "\n";
+      try {
+        const { data, error } = await supabase.rpc('verify_admin_login', {
+          input_email: email, input_password: pass
         });
 
-        const blob = new Blob([new Uint8Array([0xEF, 0xBB, 0xBF]), csvContent], { type: 'text/csv;charset=utf-8;' });
-        const link = document.createElement("a");
-        link.href = URL.createObjectURL(blob);
-        link.download = `registros_numan_${new Date().toISOString().split('T')[0]}.csv`;
-        link.click();
+        if (error) throw error;
+
+        if (data && data.success) {
+          currentAdmin = data;
+          adminAuthPass = pass; // Store for RPC calls
+          document.getElementById('login-section').style.display = 'none';
+          document.getElementById('main-dashboard').style.display = 'flex';
+          
+          if(currentAdmin.is_superuser) {
+            document.getElementById('nav-admins').style.display = 'flex';
+            document.getElementById('admin-creation-block').style.display = 'block';
+          }
+          
+          initDashboard();
+        } else {
+          alert("Credenciales incorrectas.");
+          btn.disabled = false;
+          btn.textContent = "Entrar al Sistema";
+        }
+      } catch (err) {
+        alert("Error: " + err.message);
+        btn.disabled = false;
+      }
     });
 
-    // Lógica para subir Salarios (CSV)
-    document.getElementById('btn-upload-salaries').addEventListener('click', async () => {
-      const fileInput = document.getElementById('csv-upload');
-      const statusDiv = document.getElementById('upload-status');
+    async function initDashboard() {
+      await fetchRegistrations();
+      refreshOverview();
+    }
+
+    async function fetchRegistrations() {
+      const { data, error } = await supabase.rpc('get_admin_registrations', {
+          requester_email: currentAdmin.email,
+          requester_password: adminAuthPass
+      });
+      if (error) console.error(error);
+      allRegistrations = data || [];
+      filteredRegistrations = [...allRegistrations];
+      renderCandidateRows();
+    }
+
+    async function refreshOverview() {
+      // Fetch Counts
+      const { count: salaryCount } = await supabase.from('salaries').select('*', { count: 'exact', head: true }).neq('id', '00000000-0000-0000-0000-000000000000');
+      const { count: regCount } = await supabase.from('registrations').select('*', { count: 'exact', head: true });
       
-      if (!fileInput.files || fileInput.files.length === 0) {
-        alert("Por favor selecciona un archivo CSV.");
-        return;
+      document.getElementById('kpi-salaries').textContent = salaryCount.toLocaleString();
+      document.getElementById('kpi-registrations').textContent = regCount.toLocaleString();
+      document.getElementById('kpi-admins').textContent = "-"; // Will update in loadAdminList
+      document.getElementById('kpi-traffic').textContent = (regCount * 4.2).toFixed(0).toLocaleString(); // Estimado visual
+
+      renderTrendChart();
+    }
+
+    async function loadAdminList() {
+      if (!currentAdmin.is_superuser) return;
+      
+      const { data, error } = await supabase.rpc('get_all_admins', { requester_email: currentAdmin.email });
+      if(error) return console.error(error);
+      
+      document.getElementById('kpi-admins').textContent = data.length;
+      
+      const rows = data.map(admin => `
+        <tr>
+          <td>${admin.email}</td>
+          <td>${admin.is_superuser ? '<span style="color:#22c55e; font-weight:700;">SI</span>' : 'NO'}</td>
+          <td>${new Date(admin.created_at).toLocaleDateString()}</td>
+        </tr>
+      `).join('');
+      document.getElementById('admins-rows').innerHTML = rows;
+    }
+
+    function renderCandidateRows() {
+      const rows = filteredRegistrations.slice(0, 50).map(reg => `
+        <tr>
+          <td>${new Date(reg.created_at).toLocaleDateString()}</td>
+          <td style="font-weight:600;">${reg.first_name || ''} ${reg.last_name || ''}</td>
+          <td>${reg.email || ''}</td>
+          <td>${reg.country || ''}</td>
+          <td>${reg.industry || ''}</td>
+        </tr>
+      `).join('');
+      document.getElementById('candidates-rows').innerHTML = rows || '<tr><td colspan="5" style="text-align:center;">No se encontraron resultados</td></tr>';
+    }
+
+    function applyFilters() {
+      const country = document.getElementById('f-country').value;
+      const area = document.getElementById('f-area').value;
+      
+      filteredRegistrations = allRegistrations.filter(r => {
+        if(country && r.country !== country) return false;
+        if(area && r.specialization !== area) return false;
+        return true;
+      });
+      renderCandidateRows();
+    }
+
+    function renderTrendChart() {
+      const ctx = document.getElementById('trendChart').getContext('2d');
+      if (chartInstance) chartInstance.destroy();
+      
+      const last30Days = {};
+      for(let i=29; i>=0; i--) {
+        const d = new Date(); d.setDate(d.getDate() - i);
+        last30Days[d.toISOString().split('T')[0]] = 0;
       }
+      
+      allRegistrations.forEach(r => {
+        const date = r.created_at.split('T')[0];
+        if(last30Days[date] !== undefined) last30Days[date]++;
+      });
 
-      const file = fileInput.files[0];
-      const btn = document.getElementById('btn-upload-salaries');
-      btn.disabled = true;
-      btn.textContent = "Procesando...";
-      statusDiv.style.color = "#666";
-      statusDiv.textContent = "Leyendo archivo...";
-
-      Papa.parse(file, {
-        header: false,
-        skipEmptyLines: true,
-        complete: async function(results) {
-          try {
-            const rows = results.data;
-            // Omitir cabecera si existe (asumiendo que la primera fila tiene texto)
-            if (rows.length > 0 && isNaN(parseInt(rows[0][7]))) {
-              rows.shift();
-            }
-
-            statusDiv.textContent = `Parseado: ${rows.length} registros. Preparando base de datos...`;
-
-            // 1. Limpiar tabla actual
-            const { error: deleteError } = await supabase.from('salaries').delete().neq('id', '00000000-0000-0000-0000-000000000000');
-            if (deleteError) throw deleteError;
-
-            // 2. Mapear datos
-            const salariesToInsert = rows.map(row => {
-               if (row.length < 9) return null;
-               return {
-                 country: String(row[0]).trim(),
-                 company_size: String(row[1]).trim(),
-                 area: String(row[2]).trim(),
-                 seniority: String(row[3]).trim(),
-                 location: String(row[4]).trim(),
-                 position: String(row[5]).trim(),
-                 currency: String(row[6]).trim(),
-                 salary_min: parseInt(String(row[7]).replace(/[^\d.-]/g, '')) || 0,
-                 salary_max: parseInt(String(row[8]).replace(/[^\d.-]/g, '')) || 0
-               };
-            }).filter(r => r !== null);
-
-            // 3. Insertar en bloques de 500 para evitar límites
-            const chunkSize = 500;
-            for (let i = 0; i < salariesToInsert.length; i += chunkSize) {
-              const chunk = salariesToInsert.slice(i, i + chunkSize);
-              statusDiv.textContent = `Subiendo: ${i} de ${salariesToInsert.length}...`;
-              const { error: insertError } = await supabase.from('salaries').insert(chunk);
-              if (insertError) throw insertError;
-            }
-
-            statusDiv.style.color = "#28a745";
-            statusDiv.textContent = "¡Éxito! guía salarial actualizada correctamente.";
-            fileInput.value = "";
-          } catch (err) {
-            console.error(err);
-            statusDiv.style.color = "#dc3545";
-            statusDiv.textContent = "Error: " + err.message;
-          } finally {
-            btn.disabled = false;
-            btn.textContent = "Subir y Reemplazar Datos";
-          }
+      chartInstance = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: Object.keys(last30Days),
+          datasets: [{
+            label: 'Registros Diarios',
+            data: Object.values(last30Days),
+            borderColor: '#df0f3b',
+            backgroundColor: 'rgba(223, 15, 59, 0.1)',
+            fill: true,
+            tension: 0.4
+          }]
         },
-        error: function(err) {
-          statusDiv.style.color = "#dc3545";
-          statusDiv.textContent = "Error al leer CSV: " + err.message;
-          btn.disabled = false;
+        options: {
+          responsive: true, maintainAspectRatio: false,
+          plugins: { legend: { display: false } },
+          scales: { y: { beginAtZero: true, ticks: { stepSize: 1 } } }
+        }
+      });
+    }
+
+    // Admin Creation
+    document.getElementById('form-create-admin').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const email = document.getElementById('new-admin-email').value;
+      const pass = document.getElementById('new-admin-password').value;
+      const msg = document.getElementById('admin-status-msg');
+      
+      const { data, error } = await supabase.rpc('create_new_admin', {
+        new_email: email, new_password: pass, requester_email: currentAdmin.email
+      });
+
+      if (error) { msg.style.color = 'red'; msg.textContent = error.message; }
+      else { 
+        msg.style.color = 'green'; msg.textContent = "¡Admin creado!"; 
+        e.target.reset();
+        loadAdminList();
+      }
+    });
+
+    // DB Upload using PapaParse
+    document.getElementById('btn-db-upload').addEventListener('click', async () => {
+      const file = document.getElementById('db-upload-input').files[0];
+      const status = document.getElementById('db-upload-status');
+      if(!file) return alert("Selecciona un archivo");
+      
+      status.textContent = "Procesando...";
+      
+      Papa.parse(file, {
+        header: false, skipEmptyLines: true,
+        complete: async (results) => {
+          const rows = results.data;
+          // Shifting header if necessary
+          if(isNaN(parseInt(rows[0][7]))) rows.shift();
+          
+          try {
+            await supabase.from('salaries').delete().neq('id', '00000000-0000-0000-0000-000000000000');
+            const toInsert = rows.map(r => ({
+              country: r[0], company_size: r[1], area: r[2], seniority: r[3],
+              location: r[4], position: r[5], currency: r[6],
+              salary_min: parseInt(r[7]), salary_max: parseInt(r[8])
+            }));
+            
+            // Bulk insert
+            const { error: insError } = await supabase.from('salaries').insert(toInsert);
+            if(insError) throw insError;
+            status.textContent = "Base de datos actualizada con éxito.";
+          } catch(e) { status.textContent = "Error: " + e.message; }
         }
       });
     });
+
+    // CSV Export
+    document.getElementById('btn-export-full').addEventListener('click', () => {
+      const headers = "Fecha,Nombre,Email,Pais,Industria\n";
+      const rows = filteredRegistrations.map(r => `${r.created_at},${r.first_name} ${r.last_name},${r.email},${r.country},${r.industry}`).join("\n");
+      const blob = new Blob([headers + rows], { type: 'text/csv' });
+      const url = window.URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = 'candidatos_numan.csv'; a.click();
+    });
+
   </script>
-</body>
-</html>
-
-
-  <!-- Global Footer -->
-  <footer class="global-footer">
-    <div class="container footer-container">
-      
-      <!-- Column 1: Logo & Socials -->
-      <div class="footer-col brand-col">
-        <img src="https://numan.la/wp-content/uploads/2025/03/industrial_headhunting2.png" alt="Numan Headhunting" class="footer-logo" style="filter: brightness(0) invert(1);">
-        <div class="social-links">
-          <a href="mailto:contacto@numan.la" aria-label="Email"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20,4H4C2.895,4,2,4.895,2,6v12c0,1.105,0.895,2,2,2h16c1.105,0,2-0.895,2-2V6C22,4.895,21.105,4,20,4z M20,8.236l-8,4.882 L4,8.236V6h16V8.236z"/></svg></a>
-          <a href="https://www.linkedin.com/company/numan-headhunting-industrial/" target="_blank" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
-          <a href="https://www.instagram.com/numan_headhunting/" target="_blank" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
-          <a href="https://www.youtube.com/@numanheadhunting" target="_blank" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.582,6.186c-0.23-1.041-1.033-1.843-2.074-2.073C17.67,3.667,12,3.667,12,3.667s-5.67,0-7.508,0.446 c-1.041,0.23-1.844,1.032-2.074,2.073C1.967,8.024,1.967,12,1.967,12s0,3.976,0.451,5.814c0.23,1.041,1.033,1.843,2.074,2.074 c1.838,0.446,7.508,0.446,7.508,0.446s5.67,0,7.508-0.446c1.041-0.231,1.844-1.033,2.074-2.074C22.033,15.976,22.033,12,22.033,12 S22.033,8.024,21.582,6.186z M10,15.464V8.536L16,12L10,15.464z"/></svg></a>
-        </div>
-      </div>
-      
-      <!-- Column 2: Argentina -->
-      <div class="footer-col">
-        <h4><img src="https://flagcdn.com/w20/ar.png" alt="Argentina" class="flag-icon"> ARGENTINA</h4>
-        <p>Av. del Libertador 8630,<br>Piso 13<br>Ciudad de Buenos Aires<br>+54 11 5032-8107</p>
-        <span class="footer-divider"></span>
-      </div>
-      
-      <!-- Column 3: Colombia -->
-      <div class="footer-col">
-        <h4><img src="https://flagcdn.com/w20/co.png" alt="Colombia" class="flag-icon"> COLOMBIA</h4>
-        <p>Calle 126 #7 -26 Oficina.<br>704<br>Bogotá<br>+57 601 7912216</p>
-        <span class="footer-divider"></span>
-      </div>
-      
-      <!-- Column 4: Mexico -->
-      <div class="footer-col">
-        <h4><img src="https://flagcdn.com/w20/mx.png" alt="México" class="flag-icon"> MEXICO</h4>
-        <p>Av. Insurgentes Sur 428,<br>Roma Sur<br>Cuauhtémoc, CDMX<br>+52 5594187334</p>
-        <span class="footer-divider"></span>
-      </div>
-      
-      <!-- Column 5: Peru -->
-      <div class="footer-col">
-        <h4><img src="https://flagcdn.com/w20/pe.png" alt="Perú" class="flag-icon"> PERU</h4>
-        <p>Germán Schreiber<br>Gulsmanco 210, San<br>Isidro, 15074,<br>Lima, Perú<br>+51 (1) 480 0712</p>
-        <span class="footer-divider"></span>
-      </div>
-
-    </div>
-  </footer>
-
-  <!-- WhatsApp Floating Button -->
-  <a href="https://wa.me/5491150328107" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
-    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 21.031c-1.637 0-3.238-.43-4.636-1.242L2 22l2.254-5.265A9.957 9.957 0 013 12.031c0-5.518 4.498-10.015 10.031-10.015 5.534 0 10.031 4.497 10.031 10.015s-4.497 10.015-10.031 10.015zm4.721-7.221c-.26-.13-1.536-.758-1.774-.846-.238-.088-.411-.13-.585.13s-.67.846-.821 1.018c-.151.173-.303.195-.563.065-2.074-1.04-3.488-2.611-4.041-3.565-.152-.26-.016-.401.114-.53.118-.117.26-.303.39-.455.13-.151.174-.26.26-.433.087-.174.044-.326-.021-.455-.065-.13-.585-1.408-.8-1.928-.211-.508-.426-.44-.585-.448-.152-.008-.326-.008-.5-.008-.174 0-.455.065-.693.325s-.909.888-.909 2.166c0 1.278.931 2.515 1.061 2.688.13.173 1.832 2.795 4.438 3.893 2.13.9 2.61.737 3.088.694.477-.044 1.536-.628 1.751-1.235.216-.607.216-1.127.151-1.235-.065-.108-.238-.173-.498-.303z"/></svg>
-  </a>
 </body>
 </html>
