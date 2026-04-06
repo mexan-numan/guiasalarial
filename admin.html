@@ -288,7 +288,7 @@
   </div>
 
   <script>
-    const SECRET = "Numan2026";
+    const SH = "TnVtYW4yMDI2"; // Obfuscated secret (Numan2026)
     let allRegistrations = [];
     let chartInstance = null;
 
@@ -296,7 +296,7 @@
         const pass = document.getElementById('admin-pass').value;
         const btn = document.getElementById('btn-login');
         
-        if(pass === SECRET) {
+        if(btoa(pass) === SH) {
             btn.disabled = true;
             btn.textContent = "Autenticando y cargando...";
             

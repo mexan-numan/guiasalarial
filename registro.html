@@ -608,7 +608,7 @@
         <h3 style="font-size: 24px; color: #214496; margin-bottom: 15px;">¡Gracias por registrarte!</h3>
         <p style="font-size: 16px; color: #555; line-height: 1.5; margin-bottom: 25px;">Te hemos enviado un correo electrónico con el enlace de acceso directo a la Guía Salarial.</p>
         <p style="font-size: 14px; color: #888;"><strong>Por favor revisa tu bandeja de entrada (y la carpeta de SPAM).</strong></p>
-        <button onclick="document.getElementById('success-modal').style.display = 'none'; window.location.reload();" class="btn-submit" style="margin-top: 20px; width: auto; padding: 10px 30px;">Entendido</button>
+        <button onclick="window.location.href='index.html';" class="btn-submit" style="margin-top: 20px; width: auto; padding: 10px 30px;">Ver Guía Salarial Ahora &gt;</button>
       </div>
     </div>
 
@@ -688,6 +688,8 @@
           console.error("Failed to send welcome email: ", emailError);
         }
         
+        // Grant immediate access
+        sessionStorage.setItem('accessGranted', 'true');
         document.getElementById('success-modal').style.display = 'flex';
       } catch (error) {
         console.error("Error with Supabase: ", error);
