@@ -1,7 +1,11 @@
 -- 1. Habilitar la extensión de criptografía avanzada
 CREATE EXTENSION IF NOT EXISTS pgcrypto;
 
--- 2. Modificar la función de login para usar hashing (BCRYPT)
+-- 2. Eliminar funciones previas para evitar errores de cambio de tipo (Return Type)
+DROP FUNCTION IF EXISTS verify_admin_login(text, text);
+DROP FUNCTION IF EXISTS create_new_admin(text, text, text);
+
+-- 3. Modificar la función de login para usar hashing (BCRYPT)
 CREATE OR REPLACE FUNCTION verify_admin_login(input_email text, input_password text)
 RETURNS json AS $$
 DECLARE
