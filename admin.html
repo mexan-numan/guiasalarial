@@ -348,35 +348,35 @@
       let countWeek = 0;
       const chartDataMap = {};
 
-      const tableRows = dataArray.slice(0, 50).map(row => {
-        const dateObj = new Date(row.created_at);
-        const dateStr = `${dateObj.getFullYear()}-${String(dateObj.getMonth()+1).padStart(2,'0')}-${String(dateObj.getDate()).padStart(2,'0')} ${String(dateObj.getHours()).padStart(2,'0')}:${String(dateObj.getMinutes()).padStart(2,'0')}`;
-        const dateChartKey = dateStr.split(' ')[0];
-        
-        const dCompare = new Date(dateObj);
-        dCompare.setHours(0,0,0,0);
-        
-        if(dCompare.getTime() === now.getTime()) countToday++;
-        if(dCompare.getTime() >= oneWeekAgo.getTime()) countWeek++;
+          const tableRows = dataArray.slice(0, 50).map(row => {
+            const dateObj = new Date(row.created_at);
+            const dateStr = `${dateObj.getFullYear()}-${String(dateObj.getMonth()+1).padStart(2,'0')}-${String(dateObj.getDate()).padStart(2,'0')} ${String(dateObj.getHours()).padStart(2,'0')}:${String(dateObj.getMinutes()).padStart(2,'0')}`;
+            const dateChartKey = dateStr.split(' ')[0];
+            
+            const dCompare = new Date(dateObj);
+            dCompare.setHours(0,0,0,0);
+            
+            if(dCompare.getTime() === now.getTime()) countToday++;
+            if(dCompare.getTime() >= oneWeekAgo.getTime()) countWeek++;
 
-        chartDataMap[dateChartKey] = (chartDataMap[dateChartKey] || 0) + 1;
+            chartDataMap[dateChartKey] = (chartDataMap[dateChartKey] || 0) + 1;
 
-        return `
-          <tr>
-            <td>${dateStr}</td>
-            <td>${row.nombre || ''} ${row.apellido || ''}</td>
-            <td>${row.email || ''}</td>
-            <td>${row.empresa || ''}</td>
-            <td>${row.posicion || ''}</td>
-            <td>${row.pais || ''}</td>
-          </tr>
-        `;
-      });
-      
-      updateKPIs(dataArray.length, countToday, countWeek);
-      document.getElementById('preview-tbody').innerHTML = tableRows.join('');
-      renderChart(chartDataMap);
-    }
+            return `
+              <tr>
+                <td>${dateStr}</td>
+                <td>${row.first_name || ''} ${row.last_name || ''}</td>
+                <td>${row.email || ''}</td>
+                <td>${row.company || ''}</td>
+                <td>${row.position || ''}</td>
+                <td>${row.country || ''}</td>
+              </tr>
+            `;
+          });
+          
+          updateKPIs(dataArray.length, countToday, countWeek);
+          document.getElementById('preview-tbody').innerHTML = tableRows.join('');
+          renderChart(chartDataMap);
+        }
     
     function updateKPIs(total, today, week) {
       document.getElementById('kpi-total').textContent = total;
@@ -443,18 +443,18 @@
             
             const rowData = [
                 escapeCsv(dateStr),
-                escapeCsv(row.nombre),
-                escapeCsv(row.apellido),
+                escapeCsv(row.first_name),
+                escapeCsv(row.last_name),
                 escapeCsv(row.email),
-                escapeCsv(row.telefono),
-                escapeCsv(row.posicion),
-                escapeCsv(row.ciudad),
-                escapeCsv(row.pais),
-                escapeCsv(row.empresa),
-                escapeCsv(row.tamano_empresa),
-                escapeCsv(row.industria),
-                escapeCsv(row.area_especializacion),
-                escapeCsv(row.interes_guia)
+                escapeCsv(row.phone),
+                escapeCsv(row.position),
+                escapeCsv(row.city),
+                escapeCsv(row.country),
+                escapeCsv(row.company),
+                escapeCsv(row.company_size),
+                escapeCsv(row.industry),
+                escapeCsv(row.specialization),
+                escapeCsv(row.interest)
             ];
             csvContent += rowData.join(",") + "\n";
         });

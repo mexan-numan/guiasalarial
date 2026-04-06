@@ -657,18 +657,18 @@
         }
 
         const formData = {
-          nombre: inputs[0].value,
-          apellido: inputs[1].value,
-          posicion: inputs[2].value,
-          ciudad: inputs[3].value,
-          pais: inputs[4].value,
-          area_especializacion: inputs[5].value,
-          empresa: inputs[6].value,
-          tamano_empresa: inputs[7].value,
-          industria: inputs[8].value,
-          telefono: inputs[9].value,
+          first_name: inputs[0].value,
+          last_name: inputs[1].value,
+          position: inputs[2].value,
+          city: inputs[3].value,
+          country: inputs[4].value,
+          specialization: inputs[5].value,
+          company: inputs[6].value,
+          company_size: inputs[7].value,
+          industry: inputs[8].value,
+          phone: inputs[9].value,
           email: userEmail,
-          interes_guia: inputs[11].value,
+          interest: inputs[11].value,
         };
 
         const { error: insertError } = await supabase
