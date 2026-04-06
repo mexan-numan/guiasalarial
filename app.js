@@ -1,6 +1,27 @@
 // We use PapaParse from CDN in index.html, so 'Papa' will be available globally.
 
 document.addEventListener('DOMContentLoaded', () => {
+    // DOM Elements
+    const countrySelect = document.getElementById('country');
+    const sizeSelect = document.getElementById('company-size');
+    const areaSelect = document.getElementById('area');
+    const locationSelect = document.getElementById('location');
+    const submitBtn = document.getElementById('submit-btn');
+    const filterForm = document.getElementById('filter-form');
+    const filterCard = document.querySelector('.filter-card');
+    const resultsView = document.getElementById('results-view');
+    const tableView = document.getElementById('table-view');
+    const resetBtn = document.getElementById('reset-btn');
+    const navBtn = document.querySelector('.nav-btn');
+    const tableSearch = document.getElementById('table-search');
+    const entriesSelect = document.getElementById('entries-select');
+
+    // Global State
+    let mockData = {};
+    let itemsPerPage = 15;
+    let currentPage = 1;
+    let currentSearchTerm = '';
+
     // Fetch data from Supabase
     async function fetchSalaries() {
         try {
