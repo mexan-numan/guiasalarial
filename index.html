@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estudio de Remuneración Global 2026</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- PapaParse for CSV parsing -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+  <!-- Supabase JS Client -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase-config.js"></script>
+
+  <!-- Control de Acceso: Redirigir si no vienen por el link VIP del correo -->
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const hasVipToken = urlParams.get('access') === 'vip';
+    
+    if (hasVipToken) {
+      // Guardar permiso y limpiar la URL
+      sessionStorage.setItem('accessGranted', 'true');
+      window.history.replaceState({}, document.title, window.location.pathname);
+    } else if (!sessionStorage.getItem('accessGranted')) {
+      // Rebotar al registro si no tiene sesión ni token
+      window.location.href = 'registro.html';
+    }
+  </script>
+</head>
+<body>
+  <header class="main-header">
+    <div class="container header-content">
+      <div class="logo">
+        <a href="https://numan.la/" target="_blank" style="display: flex; align-items: center; text-decoration: none;">
+          <img src="https://numan.la/wp-content/uploads/2025/03/industrial_headhunting2.png" alt="Numan Headhunting" class="brand-logo">
+        </a>
+      </div>
+      <nav class="nav-links numan-nav">
+        <a href="https://numan.la/#Nosotros" target="_blank">Nosotros</a>
+        <a href="https://numan.la/#servicios" target="_blank">Servicios</a>
+        <a href="https://numan.la/#expertise" target="_blank">Especialización</a>
+        <a href="https://numan.la/#novedades" target="_blank">Blog</a>
+        <a href="https://numan.la/contacto/" target="_blank">Contacto</a>
+        <a href="#" class="nav-btn" style="margin-left: 15px;">&lt; Inicio</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero-section">
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <h1>Compara tu salario</h1>
+    </div>
+  </section>
+
+  <main class="main-content">
+    <section class="filter-card">
+      <div class="filter-header">
+        <p>Accede a nuestra guía salarial con información sobre salarios para miles de posiciones en una amplia variedad de disciplinas, y un análisis de la actualidad del mercado.</p>
+        <h2>Filtra por diferentes criterios:</h2>
+      </div>
+
+      <form id="filter-form" class="filter-grid">
+        <div class="input-group">
+          <label for="country">País</label>
+          <select id="country" name="country">
+            <option value="" disabled selected>Selecciona país</option>
+          </select>
+        </div>
+        <div class="input-group">
+          <label for="company-size">Tamaño de empresa</label>
+          <select id="company-size" name="company-size" disabled>
+            <option value="" disabled selected>-</option>
+          </select>
+        </div>
+        <div class="input-group">
+          <label for="area">Área de especialización</label>
+          <select id="area" name="area" disabled>
+            <option value="" disabled selected>-</option>
+          </select>
+        </div>
+        <div class="input-group">
+            <label for="location">Ubicación</label>
+            <select id="location" name="location" disabled>
+              <option value="" disabled selected>-</option>
+            </select>
+        </div>
+        <div class="submit-group">
+          <button type="submit" id="submit-btn" class="btn-primary" disabled>Ver salarios &gt;</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Results Section (hidden by default) -->
+    <section id="results-view" class="results-container hidden">
+      <!-- Summary Left Panel -->
+      <div class="summary-panel" style="background: #fafafa; padding: 40px; border-radius: 8px 0 0 8px; border: 1px solid var(--border-color); border-right: none;">
+         <button id="reset-btn" class="btn-secondary" style="margin-bottom: 30px; font-size: 16px;">&lt; Quiero cambiar los criterios de búsqueda</button>
+         
+         <div class="summary-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 40px;">
+            <div class="summary-item">
+                <div style="font-size: 12px; font-weight: 700; text-transform: uppercase; margin-bottom: 5px;">PAÍS</div>
+                <div id="sum-pais" style="font-size: 16px; color: var(--text-dark);">...</div>
+            </div>
+            <div class="summary-item">
+                <div style="font-size: 12px; font-weight: 700; text-transform: uppercase; margin-bottom: 5px;">ÁREA DE ESPECIALIZACIÓN</div>
+                <div id="sum-area" style="font-size: 16px; color: var(--text-dark);">...</div>
+            </div>
+            <div class="summary-item">
+                <div style="font-size: 12px; font-weight: 700; text-transform: uppercase; margin-bottom: 5px;">TAMAÑO DE EMPRESA</div>
+                <div id="sum-tamano" style="font-size: 16px; color: var(--text-dark);">...</div>
+            </div>
+            <div class="summary-item">
+                <div style="font-size: 12px; font-weight: 700; text-transform: uppercase; margin-bottom: 5px;">UBICACIÓN</div>
+                <div id="sum-ubicacion" style="font-size: 16px; color: var(--text-dark);">...</div>
+            </div>
+         </div>
+         
+         <button class="btn-outline-primary" onclick="document.getElementById('table-view').scrollIntoView({behavior: 'smooth'})" style="color: var(--numan-blue); border: 2px solid var(--numan-blue); padding: 12px 24px; font-weight: 600; cursor: pointer; background: transparent; transition: all 0.3s ease;">Ir a Análisis de mercado <svg style="width:16px; margin-left:8px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button>
+      </div>
+
+      <!-- Call to Action Side Card -->
+      <div class="cta-panel" style="background: #9EC445; padding: 50px 40px; border-radius: 0 8px 8px 0; display: flex; flex-direction: column; justify-content: center; align-items: flex-start;">
+        <h3 style="color: var(--numan-blue); font-size: 30px; font-weight: 700; margin-bottom: 15px; line-height: 1.2; text-transform: uppercase;">Portal de búsquedas</h3>
+        <p style="color: #ffffff; font-size: 16px; margin-bottom: 25px; line-height: 1.5;">Conocé nuestras búsquedas actuales y encontrá oportunidades laborales que sean de tu interés.</p>
+        <a href="https://numan.la/careerportal/#/jobs" target="_blank" class="btn-cta-blue" style="background-color: var(--numan-blue); color: #ffffff; text-decoration: none; padding: 12px 30px; font-weight: 600; font-size: 16px; border-radius: 4px; transition: opacity 0.3s;">Ingresar</a>
+      </div>
+    </section>
+
+    <!-- Table Section (hidden by default) -->
+    <section id="table-view" class="table-container hidden">
+      <h2 id="table-title">Resultados de Salarios</h2>
+      <div class="table-controls">
+        <div class="entries-control">
+          Mostrar 
+          <select id="entries-select">
+            <option>10</option>
+            <option selected>15</option>
+            <option>25</option>
+            <option>50</option>
+            <option value="Todo">Todo</option>
+          </select>
+          registros
+        </div>
+        <div class="search-control">
+          Buscar: <input type="text" id="table-search">
+        </div>
+      </div>
+      <div class="table-wrapper">
+        <table id="salary-table">
+          <thead>
+            <tr>
+              <th id="th-ubicacion" class="hidden">Ubicación</th>
+              <th>Seniority</th>
+              <th>Posición</th>
+              <th>Moneda</th>
+              <th>Salario MIN</th>
+              <th>Salario MAX</th>
+            </tr>
+          </thead>
+          <tbody id="table-body">
+            <!-- Rows populated by JS -->
+          </tbody>
+        </table>
+      </div>
+      <div class="table-footer">
+        <div class="showing-info">Mostrando <span id="showing-start">0</span> a <span id="showing-end">0</span> de <span id="total-count">0</span> registros</div>
+        <div class="pagination" id="pagination-controls">
+          <!-- Pagination buttons populated by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Clients Section (Full width Dynamic Carousel - Large Logos) -->
+    <section class="clients-section-dynamic">
+      <h2>CONFÍAN EN NOSOTROS</h2>
+      <div class="carousel-wrapper">
+        <div class="carousel-track">
+          <!-- First set of logos -->
+          <div class="carousel-item">
+            <img src="https://numan.la/wp-content/uploads/2022/02/01.png" alt="Client" class="carousel-logo">
+            <img src="https://numan.la/wp-content/uploads/2022/02/02.png" alt="Client" class="carousel-logo">
+            <img src="https://numan.la/wp-content/uploads/2022/02/03.png" alt="Client" class="carousel-logo">
+            <img src="https://numan.la/wp-content/uploads/2022/02/04.png" alt="Client" class="carousel-logo">
+            <img src="https://numan.la/wp-content/uploads/2022/02/05.png" alt="Client" class="carousel-logo">
+            <img src="https://numan.la/wp-content/uploads/2022/02/06.png" alt="Client" class="carousel-logo">
+            <img src="https://numan.la/wp-content/uploads/2022/02/07.png" alt="Client" class="carousel-logo">
+            <img src="https://numan.la/wp-content/uploads/2022/02/08.png" alt="Client" class="carousel-logo">
+          </div>
+          <!-- Exact duplicate for seamless infinite scrolling -->
+          <div class="carousel-item">
+            <img src="https://numan.la/wp-content/uploads/2022/02/01.png" alt="Client" class="carousel-logo">
+            <img src="https://numan.la/wp-content/uploads/2022/02/02.png" alt="Client" class="carousel-logo">
+            <img src="https://numan.la/wp-content/uploads/2022/02/03.png" alt="Client" class="carousel-logo">
+            <img src="https://numan.la/wp-content/uploads/2022/02/04.png" alt="Client" class="carousel-logo">
+            <img src="https://numan.la/wp-content/uploads/2022/02/05.png" alt="Client" class="carousel-logo">
+            <img src="https://numan.la/wp-content/uploads/2022/02/06.png" alt="Client" class="carousel-logo">
+            <img src="https://numan.la/wp-content/uploads/2022/02/07.png" alt="Client" class="carousel-logo">
+            <img src="https://numan.la/wp-content/uploads/2022/02/08.png" alt="Client" class="carousel-logo">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- YouTube Subscription Section -->
+    <section class="youtube-section">
+      <div class="youtube-container">
+        <!-- Left Side: Laptop Image -->
+        <div class="youtube-image-col">
+          <img src="numan_laptop.png" alt="Numan YouTube Channel on Laptop" class="laptop-img">
+        </div>
+        
+        <!-- Right Side: Content -->
+        <div class="youtube-content-col">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg" alt="YouTube Logo" class="yt-logo">
+          <h2>¡SUSCRIBITE!</h2>
+          <p>Creemos en la potencia del networking por lo que somos muy activos con la organización de workshops temáticos y webinars para compartir ideas, buenas prácticas y ampliar la red de contactos de los participantes.</p>
+          <a href="https://www.youtube.com/@numanheadhunting" target="_blank" class="btn-youtube">Ir al canal</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+  <!-- Global Footer -->
+  <footer class="global-footer">
+    <div class="container footer-container">
+      
+      <!-- Column 1: Logo & Socials -->
+      <div class="footer-col brand-col">
+        <img src="https://numan.la/wp-content/uploads/2025/03/industrial_headhunting2.png" alt="Numan Headhunting" class="footer-logo" style="filter: brightness(0) invert(1);">
+        <div class="social-links">
+          <a href="mailto:contacto@numan.la" aria-label="Email"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20,4H4C2.895,4,2,4.895,2,6v12c0,1.105,0.895,2,2,2h16c1.105,0,2-0.895,2-2V6C22,4.895,21.105,4,20,4z M20,8.236l-8,4.882 L4,8.236V6h16V8.236z"/></svg></a>
+          <a href="https://www.linkedin.com/company/numan-headhunting-industrial/" target="_blank" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
+          <a href="https://www.instagram.com/numan_headhunting/" target="_blank" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+          <a href="https://www.youtube.com/@numanheadhunting" target="_blank" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.582,6.186c-0.23-1.041-1.033-1.843-2.074-2.073C17.67,3.667,12,3.667,12,3.667s-5.67,0-7.508,0.446 c-1.041,0.23-1.844,1.032-2.074,2.073C1.967,8.024,1.967,12,1.967,12s0,3.976,0.451,5.814c0.23,1.041,1.033,1.843,2.074,2.074 c1.838,0.446,7.508,0.446,7.508,0.446s5.67,0,7.508-0.446c1.041-0.231,1.844-1.033,2.074-2.074C22.033,15.976,22.033,12,22.033,12 S22.033,8.024,21.582,6.186z M10,15.464V8.536L16,12L10,15.464z"/></svg></a>
+        </div>
+      </div>
+      
+      <!-- Column 2: Argentina -->
+      <div class="footer-col">
+        <h4><img src="https://flagcdn.com/w20/ar.png" alt="Argentina" class="flag-icon"> ARGENTINA</h4>
+        <p>Av. del Libertador 8630,<br>Piso 13<br>Ciudad de Buenos Aires<br>+54 11 5032-8107</p>
+        <span class="footer-divider"></span>
+      </div>
+      
+      <!-- Column 3: Colombia -->
+      <div class="footer-col">
+        <h4><img src="https://flagcdn.com/w20/co.png" alt="Colombia" class="flag-icon"> COLOMBIA</h4>
+        <p>Calle 126 #7 -26 Oficina.<br>704<br>Bogotá<br>+57 601 7912216</p>
+        <span class="footer-divider"></span>
+      </div>
+      
+      <!-- Column 4: Mexico -->
+      <div class="footer-col">
+        <h4><img src="https://flagcdn.com/w20/mx.png" alt="México" class="flag-icon"> MEXICO</h4>
+        <p>Av. Insurgentes Sur 428,<br>Roma Sur<br>Cuauhtémoc, CDMX<br>+52 5594187334</p>
+        <span class="footer-divider"></span>
+      </div>
+      
+      <!-- Column 5: Peru -->
+      <div class="footer-col">
+        <h4><img src="https://flagcdn.com/w20/pe.png" alt="Perú" class="flag-icon"> PERU</h4>
+        <p>Germán Schreiber<br>Gulsmanco 210, San<br>Isidro, 15074,<br>Lima, Perú<br>+51 (1) 480 0712</p>
+        <span class="footer-divider"></span>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/5491150328107" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 21.031c-1.637 0-3.238-.43-4.636-1.242L2 22l2.254-5.265A9.957 9.957 0 013 12.031c0-5.518 4.498-10.015 10.031-10.015 5.534 0 10.031 4.497 10.031 10.015s-4.497 10.015-10.031 10.015zm4.721-7.221c-.26-.13-1.536-.758-1.774-.846-.238-.088-.411-.13-.585.13s-.67.846-.821 1.018c-.151.173-.303.195-.563.065-2.074-1.04-3.488-2.611-4.041-3.565-.152-.26-.016-.401.114-.53.118-.117.26-.303.39-.455.13-.151.174-.26.26-.433.087-.174.044-.326-.021-.455-.065-.13-.585-1.408-.8-1.928-.211-.508-.426-.44-.585-.448-.152-.008-.326-.008-.5-.008-.174 0-.455.065-.693.325s-.909.888-.909 2.166c0 1.278.931 2.515 1.061 2.688.13.173 1.832 2.795 4.438 3.893 2.13.9 2.61.737 3.088.694.477-.044 1.536-.628 1.751-1.235.216-.607.216-1.127.151-1.235-.065-.108-.238-.173-.498-.303z"/></svg>
+  </a>
+
+</body>
+</html>
