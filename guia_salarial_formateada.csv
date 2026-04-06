@@ -1,0 +1,741 @@
+﻿País;Tamaño;Área;Seniority;Ubicación;Posición;Moneda;Salario Min;Salario Max
+México;Grande;Planta;Dirección;Centro;Director de Almacén;MXN;140000;180000
+México;Grande;Planta;Gerencia;Centro;Gerente de Supply Chain;MXN;140000;170000
+México;Grande;Planta;Gerencia;Centro;Gerente de Compras;MXN;140000;160000
+México;Grande;Planta;Gerencia;Centro;Gerente de Inventarios;MXN;140000;165000
+México;Grande;Planta;Gerencia;Centro;Gerente de Mantenimiento;MXN;130000;150000
+México;Grande;Planta;Gerencia;Centro;Gerente de Producción;MXN;160000;180000
+México;Grande;Planta;Gerencia;Centro;Gerente de Mejora Continua;MXN;105000;125000
+México;Grande;Planta;Gerencia;Centro;Gerente de Ingeniería;MXN;130000;150000
+México;Grande;Planta;Gerencia;Centro;Gerente de Calidad;MXN;150000;180000
+México;Grande;Planta;Gerencia;Centro;Gerente de Materiales;MXN;130000;150000
+México;Grande;Planta;Gerencia;Centro;Director de I+D (R&D);MXN;230000;250000
+México;Grande;Planta;Gerencia;Centro;Director de Producción;MXN;200000;220000
+México;Grande;Planta;Gerencia;Centro;Director de Proyectos;MXN;210000;240000
+México;Grande;Planta;Dirección;Centro;Director de Planta;MXN;270000;310000
+México;Grande;Planta;Dirección;Centro;Director de Mejora Continua;MXN;210000;230000
+México;Grande;Planta;Dirección;Centro;Director de Operaciones;MXN;260000;320000
+México;Grande;Planta;Dirección;Centro;Director de Supply Chain;MXN;160000;190000
+México;Mediana;Planta;Dirección;Centro;Director de Almacén;MXN;120000;140000
+México;Mediana;Planta;Gerencia;Centro;Gerente de Supply Chain;MXN;130000;160000
+México;Mediana;Planta;Gerencia;Centro;Gerente de Compras;MXN;120000;140000
+México;Mediana;Planta;Gerencia;Centro;Gerente de Inventarios;MXN;110000;140000
+México;Mediana;Planta;Gerencia;Centro;Gerente de Mantenimiento;MXN;120000;130000
+México;Mediana;Planta;Gerencia;Centro;Gerente de Producción;MXN;140000;160000
+México;Mediana;Planta;Gerencia;Centro;Gerente de Mejora Continua;MXN;85000;105000
+México;Mediana;Planta;Gerencia;Centro;Gerente de Ingeniería;MXN;110000;120000
+México;Mediana;Planta;Gerencia;Centro;Gerente de Calidad;MXN;140000;160000
+México;Mediana;Planta;Gerencia;Centro;Gerente de Materiales;MXN;110000;130000
+México;Mediana;Planta;Dirección;Centro;Director de I+D (R&D);MXN;210000;240000
+México;Mediana;Planta;Dirección;Centro;Director de Producción;MXN;180000;230000
+México;Mediana;Planta;Dirección;Centro;Director de Proyectos;MXN;220000;230000
+México;Mediana;Planta;Dirección;Centro;Gerente / Director de Planta;MXN;210000;250000
+México;Mediana;Planta;Dirección;Centro;Director de Mejora Continua;MXN;190000;210000
+México;Mediana;Planta;Dirección;Centro;Director de Operaciones;MXN;210000;270000
+México;Mediana;Planta;Dirección;Centro;Director de Supply Chain;MXN;150000;180000
+México;Pequeña;Planta;Dirección;Centro;Director de Almacén;MXN;120000;130000
+México;Pequeña;Planta;Gerencia;Centro;Gerente de Supply Chain;MXN;120000;140000
+México;Pequeña;Planta;Gerencia;Centro;Gerente de Compras;MXN;120000;140000
+México;Pequeña;Planta;Gerencia;Centro;Gerente de Inventarios;MXN;110000;130000
+México;Pequeña;Planta;Gerencia;Centro;Gerente de Categoría;MXN;115000;130000
+México;Pequeña;Planta;Gerencia;Centro;Gerente de Mantenimiento;MXN;100000;120000
+México;Pequeña;Planta;Gerencia;Centro;Gerente de Producción;MXN;120000;140000
+México;Pequeña;Planta;Gerencia;Centro;Gerente de Mejora Continua;MXN;80000;100000
+México;Pequeña;Planta;Gerencia;Centro;Gerente de Ingeniería;MXN;110000;120000
+México;Pequeña;Planta;Gerencia;Centro;Gerente de Calidad;MXN;120000;130000
+México;Pequeña;Planta;Gerencia;Centro;Gerente de Materiales;MXN;100000;130000
+México;Pequeña;Planta;Dirección;Centro;Director de I+D (R&D);MXN;210000;240000
+México;Pequeña;Planta;Dirección;Centro;Director de Producción;MXN;160000;220000
+México;Pequeña;Planta;Dirección;Centro;Director de Proyectos;MXN;210000;230000
+México;Pequeña;Planta;Dirección;Centro;Director de Planta;MXN;150000;210000
+México;Pequeña;Planta;Dirección;Centro;Director de Mejora Continua;MXN;150000;190000
+México;Pequeña;Planta;Dirección;Centro;Director de Operaciones;MXN;170000;210000
+México;Pequeña;Planta;Dirección;Centro;Director de Supply Chain;MXN;140000;160000
+México;Grande;Planta;Dirección;Norte;Director de Almacén;MXN;195000;260000
+México;Grande;Planta;Gerencia;Norte;Gerente de Supply Chain;MXN;114000;162500
+México;Grande;Planta;Gerencia;Norte;Gerente de Compras;MXN;114000;162500
+México;Grande;Planta;Gerencia;Norte;Gerente de Inventarios;MXN;114000;162500
+México;Grande;Supply Chain;Gerencia;Norte;Gerente de Mantenimiento;MXN;119500;170500
+México;Grande;Supply Chain;Gerencia;Norte;Gerente de Producción;MXN;114000;162500
+México;Grande;Supply Chain;Gerencia;Norte;Gerente de Mejora Continua;MXN;114000;162500
+México;Grande;Supply Chain;Gerencia;Norte;Gerente de Ingeniería;MXN;114000;162500
+México;Grande;Supply Chain;Gerencia;Norte;Gerente de Calidad;MXN;114000;162500
+México;Grande;Supply Chain;Gerencia;Norte;Gerente de Materiales;MXN;114000;162500
+México;Grande;Supply Chain;Gerencia;Norte;Director de I+D (R&D);MXN;114000;162500
+México;Grande;Supply Chain;Gerencia;Norte;Director de Producción;MXN;114000;162500
+México;Grande;Supply Chain;Gerencia;Norte;Director de Proyectos;MXN;114000;162500
+México;Grande;Supply Chain;Dirección;Norte;Director de Planta;MXN;205000;273000
+México;Grande;Supply Chain;Dirección;Norte;Director de Mejora Continua;MXN;195000;260000
+México;Grande;Supply Chain;Dirección;Norte;Director de Operaciones;MXN;205000;273000
+México;Grande;Supply Chain;Dirección;Norte;Director de Supply Chain;MXN;195000;260000
+México;Mediana;Supply Chain;Dirección;Norte;Director de Almacén;MXN;150000;200000
+México;Mediana;Supply Chain;Gerencia;Norte;Gerente de Supply Chain;MXN;87500;125000
+México;Mediana;Supply Chain;Gerencia;Norte;Gerente de Compras;MXN;87500;125000
+México;Mediana;Supply Chain;Gerencia;Norte;Gerente de Inventarios;MXN;87500;125000
+México;Mediana;Supply Chain;Gerencia;Norte;Gerente de Mantenimiento;MXN;92000;131000
+México;Mediana;Supply Chain;Gerencia;Norte;Gerente de Producción;MXN;87500;125000
+México;Mediana;Supply Chain;Gerencia;Norte;Gerente de Mejora Continua;MXN;87500;125000
+México;Mediana;Supply Chain;Gerencia;Norte;Gerente de Ingeniería;MXN;87500;125000
+México;Mediana;Supply Chain;Gerencia;Norte;Gerente de Calidad;MXN;87500;125000
+México;Mediana;Supply Chain;Gerencia;Norte;Gerente de Materiales;MXN;87500;125000
+México;Mediana;Supply Chain;Dirección;Norte;Director de I+D (R&D);MXN;150000;200000
+México;Mediana;Supply Chain;Dirección;Norte;Director de Producción;MXN;150000;200000
+México;Mediana;Supply Chain;Dirección;Norte;Director de Proyectos;MXN;150000;200000
+México;Mediana;Supply Chain;Dirección;Norte;Gerente / Director de Planta;MXN;157500;210000
+México;Mediana;Supply Chain;Dirección;Norte;Director de Mejora Continua;MXN;150000;200000
+México;Mediana;Supply Chain;Dirección;Norte;Director de Operaciones;MXN;157500;210000
+México;Mediana;Supply Chain;Dirección;Norte;Director de Supply Chain;MXN;150000;200000
+México;Pequeña;Supply Chain;Dirección;Norte;Director de Almacén;MXN;120000;160000
+México;Pequeña;Supply Chain;Gerencia;Norte;Gerente de Supply Chain;MXN;70000;100000
+México;Pequeña;Supply Chain;Gerencia;Norte;Gerente de Compras;MXN;70000;100000
+México;Pequeña;Supply Chain;Gerencia;Norte;Gerente de Inventarios;MXN;70000;100000
+México;Pequeña;Supply Chain;Gerencia;Norte;Gerente de Categoría;MXN;70000;100000
+México;Pequeña;Supply Chain;Gerencia;Norte;Gerente de Mantenimiento;MXN;73500;105000
+México;Pequeña;Supply Chain;Gerencia;Norte;Gerente de Producción;MXN;70000;100000
+México;Pequeña;Supply Chain;Gerencia;Norte;Gerente de Mejora Continua;MXN;70000;100000
+México;Pequeña;Supply Chain;Gerencia;Norte;Gerente de Ingeniería;MXN;70000;100000
+México;Pequeña;Supply Chain;Gerencia;Norte;Gerente de Calidad;MXN;70000;100000
+México;Pequeña;Supply Chain;Gerencia;Norte;Gerente de Materiales;MXN;70000;100000
+México;Pequeña;Supply Chain;Dirección;Norte;Director de I+D (R&D);MXN;120000;160000
+México;Pequeña;Supply Chain;Dirección;Norte;Director de Producción;MXN;120000;160000
+México;Pequeña;Supply Chain;Dirección;Norte;Director de Proyectos;MXN;120000;160000
+México;Pequeña;Supply Chain;Dirección;Norte;Director de Planta;MXN;126000;168000
+México;Pequeña;Supply Chain;Dirección;Norte;Director de Mejora Continua;MXN;120000;160000
+México;Pequeña;Supply Chain;Dirección;Norte;Director de Operaciones;MXN;126000;168000
+México;Pequeña;Supply Chain;Dirección;Norte;Director de Supply Chain;MXN;120000;160000
+México;Grande;Recursos Humanos;Dirección;Bajío;Director de Recursos Humanos;MXN;163000;217500
+México;Grande;Recursos Humanos;Gerencia;Bajío;Gerente de RH Planta;MXN;95000;136000
+México;Grande;Recursos Humanos;Gerencia;Bajío;Gerente de Relaciones Laborales;MXN;100000;143000
+México;Grande;Recursos Humanos;Jefatura;Bajío;Jefe de RH;MXN;47500;68000
+México;Grande;Recursos Humanos;Jefatura;Bajío;Jefe de Nómina;MXN;50000;71500
+México;Grande;Recursos Humanos;Especialista;Bajío;Generalista de RH;MXN;34000;54500
+México;Grande;Recursos Humanos;Especialista;Bajío;Especialista de Desarrollo;MXN;36000;57000
+México;Pequeña;Recursos Humanos;Dirección;Bajío;Director de Recursos Humanos;MXN;100500;134000
+México;Mediana;Recursos Humanos;Dirección;Bajío;Director de Recursos Humanos;MXN;125500;167000
+México;Pequeña;Recursos Humanos;Gerencia;Bajío;Gerente de Relaciones Laborales;MXN;61500;88000
+México;Mediana;Recursos Humanos;Jefatura;Bajío;Jefe de Nómina;MXN;38500;55000
+México;Pequeña;Recursos Humanos;Jefatura;Bajío;Jefe de Talento;MXN;31000;44000
+México;Pequeña;Recursos Humanos;Especialista;Bajío;HRBP;MXN;22000;35000
+México;Pequeña;Recursos Humanos;Especialista;Bajío;Especialista de Desarrollo;MXN;22000;35000
+México;Mediana;Recursos Humanos;Especialista;Bajío;HRBP;MXN;27500;44000
+México;Grande;Planta;Dirección;Bajío;Director de Operaciones;MXN;180000;240000
+México;Grande;Planta;Dirección;Bajío;Director de Planta;MXN;180000;240000
+México;Grande;Planta;Gerencia;Bajío;Gerente de Mantenimiento;MXN;105000;150000
+México;Grande;Planta;Gerencia;Bajío;Gerente de Ingeniería;MXN;100000;143000
+México;Grande;Planta;Gerencia;Bajío;Gerente de Producción;MXN;100000;143000
+México;Grande;Planta;Gerencia;Bajío;Gerente de Calidad;MXN;100000;143000
+México;Grande;Planta;Gerencia;Bajío;Controller de Planta;MXN;115000;164500
+México;Grande;Planta;Jefatura;Bajío;Jefe de Mantenimiento;MXN;52500;75000
+México;Grande;Planta;Jefatura;Bajío;Jefe de Ingeniería;MXN;50000;71500
+México;Grande;Planta;Jefatura;Bajío;Superintendente de Planta;MXN;52500;75000
+México;Grande;Planta;Jefatura;Bajío;Jefe de Producción;MXN;50000;71500
+México;Grande;Planta;Jefatura;Bajío;Jefe de EHS;MXN;50000;71500
+México;Grande;Planta;Especialista;Bajío;Ingeniero de Calidad;MXN;36000;57000
+México;Grande;Planta;Especialista;Bajío;Ingeniero de Procesos;MXN;36000;57000
+México;Grande;Planta;Especialista;Centro;Planner de Producción;MXN;32500;52000
+México;Pequeña;Planta;Dirección;Centro;Director de Operaciones;MXN;101000;134500
+México;Mediana;Planta;Dirección;Centro;Director de Operaciones;MXN;126000;168000
+México;Mediana;Planta;Gerencia;Centro;Gerente de Ingeniería;MXN;70000;100000
+México;Pequeña;Planta;Gerencia;Centro;Gerente de Calidad;MXN;56000;80000
+México;Mediana;Planta;Gerencia;Centro;Gerente de Mantenimiento;MXN;73500;105000
+México;Pequeña;Planta;Gerencia;Centro;Gerente de Mantenimiento;MXN;59000;84000
+México;Pequeña;Planta;Gerencia;Centro;Gerente de Ingeniería;MXN;56000;80000
+México;Pequeña;Planta;Jefatura;Centro;Jefe de EHS;MXN;28000;40000
+México;Mediana;Planta;Jefatura;Centro;Jefe de Ingeniería;MXN;35000;50000
+México;Mediana;Planta;Jefatura;Centro;Jefe de Mantenimiento;MXN;37000;52500
+México;Pequeña;Planta;Jefatura;Centro;Jefe de Producción;MXN;28000;40000
+México;Mediana;Planta;Jefatura;Centro;Jefe de Producción;MXN;35000;50000
+México;Pequeña;Planta;Jefatura;Centro;Jefe de Ingeniería;MXN;28000;40000
+México;Mediana;Planta;Especialista;Centro;Ingeniero de Mantenimiento;MXN;26000;42000
+México;Pequeña;Planta;Especialista;Centro;Planner de Producción;MXN;20000;32000
+México;Pequeña;Planta;Especialista;Centro;Ingeniero de Calidad;MXN;20000;32000
+México;Pequeña;Planta;Especialista;Centro;Ingeniero de Procesos;MXN;20000;32000
+México;Mediana;Planta;Especialista;Centro;Ingeniero de Procesos;MXN;25000;40000
+México;Grande;Supply Chain;Dirección;Centro;Director de Cadena de Suministro;MXN;156000;208000
+México;Grande;Supply Chain;Gerencia;Centro;Gerente de Compras;MXN;91000;130000
+México;Grande;Supply Chain;Gerencia;Centro;Gerente de Supply Chain;MXN;91000;130000
+México;Grande;Supply Chain;Gerencia;Centro;Gerente de Logística;MXN;91000;130000
+México;Grande;Supply Chain;Jefatura;Centro;Jefe de Almacén;MXN;45500;65000
+México;Grande;Supply Chain;Jefatura;Centro;Jefe de Compras;MXN;45500;65000
+México;Grande;Supply Chain;Especialista;Centro;Analista de Planeación;MXN;32500;52000
+México;Grande;Supply Chain;Especialista;Centro;Comprador Senior;MXN;32500;52000
+México;Grande;Supply Chain;Especialista;Centro;Planner de Materiales;MXN;32500;52000
+México;Pequeña;Supply Chain;Dirección;Centro;Director de Cadena de Suministro;MXN;96000;128000
+México;Mediana;Supply Chain;Dirección;Centro;Director de Cadena de Suministro;MXN;120000;160000
+México;Mediana;Supply Chain;Gerencia;Centro;Gerente de Compras;MXN;70000;100000
+México;Pequeña;Supply Chain;Gerencia;Centro;Gerente de Supply Chain;MXN;56000;80000
+México;Mediana;Supply Chain;Gerencia;Centro;Gerente de Logística;MXN;70000;100000
+México;Pequeña;Supply Chain;Jefatura;Centro;Jefe de Compras;MXN;28000;40000
+México;Mediana;Supply Chain;Jefatura;Centro;Jefe de Almacén;MXN;35000;50000
+México;Mediana;Supply Chain;Jefatura;Centro;Coordinador de Logística;MXN;35000;50000
+México;Pequeña;Supply Chain;Jefatura;Centro;Jefe de Almacén;MXN;28000;40000
+México;Mediana;Supply Chain;Jefatura;Centro;Jefe de Tráfico;MXN;35000;50000
+México;Mediana;Supply Chain;Especialista;Centro;Comprador Senior;MXN;25000;40000
+México;Pequeña;Supply Chain;Especialista;Centro;Comprador Senior;MXN;20000;32000
+México;Pequeña;Supply Chain;Especialista;Centro;Analista de Planeación;MXN;20000;32000
+México;Mediana;Supply Chain;Especialista;Centro;Planner de Materiales;MXN;25000;40000
+México;Grande;Recursos Humanos;Dirección;Centro;Director de Recursos Humanos;MXN;148000;197500
+México;Grande;Recursos Humanos;Gerencia;Centro;Gerente de RH Planta;MXN;86500;123500
+México;Grande;Recursos Humanos;Gerencia;Centro;Gerente de Relaciones Laborales;MXN;91000;130000
+México;Grande;Recursos Humanos;Jefatura;Centro;Jefe de Talento;MXN;45500;65000
+México;Grande;Recursos Humanos;Jefatura;Centro;Jefe de RH;MXN;43000;62000
+México;Grande;Recursos Humanos;Especialista;Centro;HRBP;MXN;32500;52000
+México;Grande;Recursos Humanos;Especialista;Centro;Especialista de Desarrollo;MXN;32500;52000
+México;Pequeña;Recursos Humanos;Dirección;Centro;Director de Recursos Humanos;MXN;91000;121500
+México;Mediana;Recursos Humanos;Dirección;Centro;Director de Recursos Humanos;MXN;114000;152000
+México;Pequeña;Recursos Humanos;Gerencia;Centro;Gerente de Relaciones Laborales;MXN;56000;80000
+México;Mediana;Recursos Humanos;Gerencia;Centro;Gerente de Relaciones Laborales;MXN;70000;100000
+México;Pequeña;Recursos Humanos;Gerencia;Centro;Gerente de RH Planta;MXN;53000;76000
+México;Pequeña;Recursos Humanos;Jefatura;Centro;Jefe de Talento;MXN;28000;40000
+México;Pequeña;Recursos Humanos;Jefatura;Centro;Jefe de Nómina;MXN;28000;40000
+México;Mediana;Recursos Humanos;Jefatura;Centro;Jefe de RH;MXN;33000;47500
+México;Mediana;Recursos Humanos;Especialista;Centro;HRBP;MXN;25000;40000
+México;Pequeña;Recursos Humanos;Especialista;Centro;HRBP;MXN;20000;32000
+México;Pequeña;Recursos Humanos;Especialista;Centro;Generalista de RH;MXN;19000;30500
+México;Grande;Ventas Técnicas;Dirección;Centro;Director de Desarrollo de Negocios;MXN;150000;187500
+México;Grande;Ventas Técnicas;Dirección;Centro;Director de Ventas;MXN;172500;215500
+México;Grande;Ventas Técnicas;Gerencia;Centro;Key Account Manager (KAM) Senior;MXN;96500;130500
+México;Grande;Ventas Técnicas;Gerencia;Centro;Gerente de Ventas Técnicas;MXN;87500;119000
+México;Grande;Ventas Técnicas;Jefatura;Centro;Líder de Ventas Regional;MXN;50000;69000
+México;Grande;Ventas Técnicas;Jefatura;Centro;Coordinador de Licitaciones;MXN;50000;69000
+México;Grande;Ventas Técnicas;Especialista;Centro;Ingeniero de Aplicaciones;MXN;31000;50000
+México;Grande;Ventas Técnicas;Especialista;Centro;Technical Sales Representative;MXN;31000;50000
+México;Grande;Ventas Técnicas;Dirección;Norte;Director de Ventas Latam;MXN;207000;258500
+México;Grande;Ventas Técnicas;Dirección;Norte;Director de Ventas Latam;MXN;207000;258500
+México;Grande;Ventas Técnicas;Gerencia;Norte;Key Account Manager (KAM) Senior;MXN;115500;157000
+México;Grande;Ventas Técnicas;Gerencia;Norte;Gerente de Ventas;MXN;105000;142500
+México;Grande;Ventas Técnicas;Jefatura;Norte;Jefe de Ventas;MXN;60000;82500
+México;Grande;Ventas Técnicas;Jefatura;Norte;Coordinador de Licitaciones;MXN;60000;82500
+México;Grande;Ventas Técnicas;Especialista;Norte;Technical Sales Representative;MXN;37500;60000
+México;Grande;Ventas Técnicas;Especialista;Norte;KAM Junior;MXN;37500;60000
+México;Grande;Ventas Técnicas;Dirección;Bajío;Director Comercial Industrial;MXN;165000;206500
+México;Grande;Ventas Técnicas;Dirección;Bajío;Director Comercial Industrial;MXN;165000;206500
+México;Grande;Ventas Técnicas;Gerencia;Bajío;Business Development Manager;MXN;96500;130500
+México;Grande;Ventas Técnicas;Gerencia;Bajío;Business Development Manager;MXN;96500;130500
+México;Grande;Ventas Técnicas;Jefatura;Bajío;Coordinador de Licitaciones;MXN;55000;75500
+México;Grande;Ventas Técnicas;Jefatura;Bajío;Líder de Ventas Regional;MXN;55000;75500
+México;Grande;Ventas Técnicas;Especialista;Bajío;KAM Junior;MXN;34500;55000
+México;Grande;Ventas Técnicas;Especialista;Bajío;Ingeniero de Aplicaciones;MXN;34500;55000
+México;Mediana;Ventas Técnicas;Dirección;Centro;Director de Desarrollo de Negocios;MXN;120000;150000
+México;Mediana;Ventas Técnicas;Dirección;Centro;Director Comercial Industrial;MXN;120000;150000
+México;Mediana;Ventas Técnicas;Gerencia;Centro;Gerente de Ventas;MXN;70000;95000
+México;Mediana;Ventas Técnicas;Gerencia;Centro;Gerente de Ventas Técnicas;MXN;70000;95000
+México;Mediana;Ventas Técnicas;Jefatura;Centro;Líder de Ventas Regional;MXN;40000;55000
+México;Mediana;Ventas Técnicas;Jefatura;Centro;Coordinador de Licitaciones;MXN;40000;55000
+México;Mediana;Ventas Técnicas;Especialista;Centro;Ingeniero de Aplicaciones;MXN;25000;40000
+México;Mediana;Ventas Técnicas;Especialista;Centro;Ingeniero de Ventas - Automatización;MXN;25000;40000
+México;Mediana;Ventas Técnicas;Dirección;Norte;Director Comercial Industrial;MXN;144000;180000
+México;Mediana;Ventas Técnicas;Gerencia;Norte;Business Development Manager;MXN;84000;114000
+México;Mediana;Ventas Técnicas;Gerencia;Norte;Gerente de Ventas;MXN;84000;114000
+México;Mediana;Ventas Técnicas;Jefatura;Norte;Líder de Ventas Regional;MXN;48000;66000
+México;Mediana;Ventas Técnicas;Jefatura;Norte;Jefe de Ventas;MXN;48000;66000
+México;Mediana;Ventas Técnicas;Especialista;Norte;Ingeniero de Aplicaciones;MXN;30000;48000
+México;Mediana;Ventas Técnicas;Especialista;Norte;KAM Junior;MXN;30000;48000
+México;Mediana;Ventas Técnicas;Dirección;Bajío;Director de Ventas;MXN;152000;189500
+México;Mediana;Ventas Técnicas;Dirección;Bajío;Director Comercial Industrial;MXN;132000;165000
+México;Mediana;Ventas Técnicas;Gerencia;Bajío;Gerente de Ventas;MXN;77000;104500
+México;Mediana;Ventas Técnicas;Gerencia;Bajío;Business Development Manager;MXN;77000;104500
+México;Mediana;Ventas Técnicas;Jefatura;Bajío;Líder de Ventas Regional;MXN;44000;60500
+México;Mediana;Ventas Técnicas;Especialista;Bajío;Ingeniero de Ventas - Químicos;MXN;27500;44000
+México;Mediana;Ventas Técnicas;Especialista;Bajío;KAM Junior;MXN;27500;44000
+México;Pequeña;Ventas Técnicas;Dirección;Centro;Director de Desarrollo de Negocios;MXN;102000;127500
+México;Pequeña;Ventas Técnicas;Dirección;Centro;Director Comercial Industrial;MXN;102000;127500
+México;Pequeña;Ventas Técnicas;Gerencia;Centro;Key Account Manager (KAM) Senior;MXN;65500;89000
+México;Pequeña;Ventas Técnicas;Jefatura;Centro;Líder de Ventas Regional;MXN;34000;47000
+México;Pequeña;Ventas Técnicas;Especialista;Centro;Ingeniero de Aplicaciones;MXN;21000;34000
+México;Pequeña;Ventas Técnicas;Especialista;Centro;KAM Junior;MXN;21000;34000
+México;Pequeña;Ventas Técnicas;Dirección;Norte;Director Comercial Industrial;MXN;122500;153000
+México;Pequeña;Ventas Técnicas;Dirección;Norte;Director de Desarrollo de Negocios;MXN;122500;153000
+México;Pequeña;Ventas Técnicas;Gerencia;Norte;Business Development Manager;MXN;71500;97000
+México;Pequeña;Ventas Técnicas;Gerencia;Norte;Gerente de Ventas;MXN;71500;97000
+México;Pequeña;Ventas Técnicas;Jefatura;Norte;Jefe de Ventas;MXN;41000;56000
+México;Pequeña;Ventas Técnicas;Jefatura;Norte;Jefe de Ventas;MXN;41000;56000
+México;Pequeña;Ventas Técnicas;Especialista;Norte;KAM Junior;MXN;25500;41000
+México;Pequeña;Ventas Técnicas;Especialista;Norte;Ingeniero de Ventas - Automatización;MXN;25500;41000
+México;Pequeña;Ventas Técnicas;Dirección;Bajío;Director de Ventas;MXN;129000;161500
+México;Pequeña;Ventas Técnicas;Dirección;Bajío;Director de Desarrollo de Negocios;MXN;112000;140000
+México;Pequeña;Ventas Técnicas;Gerencia;Bajío;Gerente de Ventas;MXN;65500;89000
+México;Pequeña;Ventas Técnicas;Gerencia;Bajío;Key Account Manager (KAM) Senior;MXN;72000;97500
+México;Pequeña;Ventas Técnicas;Jefatura;Bajío;Jefe de Ventas;MXN;37500;51500
+México;Pequeña;Ventas Técnicas;Especialista;Bajío;Ingeniero de Ventas - Químicos;MXN;23500;37500
+México;Pequeña;Ventas Técnicas;Especialista;Bajío;KAM Junior;MXN;23500;37500
+Perú;Grande;Planta;Dirección;Lima;Producción;Soles;30000;45000
+Perú;Grande;Planta;Dirección;Lima;Mantenimiento;Soles;30000;45000
+Perú;Grande;Planta;Dirección;Lima;Calidad;Soles;30000;45000
+Perú;Grande;Planta;Dirección;Lima;Ingeniería;Soles;30000;45000
+Perú;Grande;Planta;Dirección;Lima;Mejora Continua;Soles;30000;45000
+Perú;Grande;Planta;Dirección;Lima;EHS;Soles;30000;45000
+Perú;Grande;Planta;Dirección;Lima;I&D;Soles;30000;45000
+Perú;Grande;Planta;Gerencia;Lima;Producción;Soles;20000;30000
+Perú;Grande;Planta;Gerencia;Lima;Mantenimiento;Soles;20000;30000
+Perú;Grande;Planta;Gerencia;Lima;Calidad;Soles;20000;30000
+Perú;Grande;Planta;Gerencia;Lima;Ingeniería;Soles;20000;30000
+Perú;Grande;Planta;Gerencia;Lima;Mejora Continua;Soles;20000;30000
+Perú;Grande;Planta;Gerencia;Lima;EHS;Soles;20000;30000
+Perú;Grande;Planta;Gerencia;Lima;I&D;Soles;20000;30000
+Perú;Grande;Planta;Jefatura;Lima;Producción;Soles;14000;17000
+Perú;Grande;Planta;Jefatura;Lima;Mantenimiento;Soles;15000;18000
+Perú;Grande;Planta;Jefatura;Lima;Calidad;Soles;14000;17000
+Perú;Grande;Planta;Jefatura;Lima;Ingeniería;Soles;14000;17000
+Perú;Grande;Planta;Jefatura;Lima;Mejora Continua;Soles;14000;17000
+Perú;Grande;Planta;Jefatura;Lima;EHS;Soles;14000;17000
+Perú;Grande;Planta;Jefatura;Lima;I&D;Soles;14000;17000
+Perú;Grande;Planta;Especialista;Lima;Producción;Soles;8000;12000
+Perú;Grande;Planta;Especialista;Lima;Mantenimiento;Soles;8000;12000
+Perú;Grande;Planta;Especialista;Lima;Calidad;Soles;8000;12000
+Perú;Grande;Planta;Especialista;Lima;Ingeniería;Soles;8000;12000
+Perú;Grande;Planta;Especialista;Lima;Mejora Continua;Soles;8000;12000
+Perú;Grande;Planta;Especialista;Lima;EHS;Soles;8000;12000
+Perú;Grande;Planta;Especialista;Lima;I&D;Soles;8000;12000
+Perú;Pequeña y Mediana;Planta;Dirección;Lima;Producción;Soles;25000;35000
+Perú;Pequeña y Mediana;Planta;Dirección;Lima;Mantenimiento;Soles;25000;35000
+Perú;Pequeña y Mediana;Planta;Dirección;Lima;Calidad;Soles;25000;35000
+Perú;Pequeña y Mediana;Planta;Dirección;Lima;Ingeniería;Soles;25000;35000
+Perú;Pequeña y Mediana;Planta;Dirección;Lima;Mejora Continua;Soles;25000;35000
+Perú;Pequeña y Mediana;Planta;Dirección;Lima;EHS;Soles;25000;35000
+Perú;Pequeña y Mediana;Planta;Dirección;Lima;I&D;Soles;25000;35000
+Perú;Pequeña y Mediana;Planta;Gerencia;Lima;Producción;Soles;15000;20000
+Perú;Pequeña y Mediana;Planta;Gerencia;Lima;Mantenimiento;Soles;15000;20000
+Perú;Pequeña y Mediana;Planta;Gerencia;Lima;Calidad;Soles;15000;20000
+Perú;Pequeña y Mediana;Planta;Gerencia;Lima;Ingeniería;Soles;15000;20000
+Perú;Pequeña y Mediana;Planta;Gerencia;Lima;Mejora Continua;Soles;15000;20000
+Perú;Pequeña y Mediana;Planta;Gerencia;Lima;EHS;Soles;15000;20000
+Perú;Pequeña y Mediana;Planta;Gerencia;Lima;I&D;Soles;15000;20000
+Perú;Pequeña y Mediana;Planta;Jefatura;Lima;Producción;Soles;12000;14000
+Perú;Pequeña y Mediana;Planta;Jefatura;Lima;Mantenimiento;Soles;10000;14000
+Perú;Pequeña y Mediana;Planta;Jefatura;Lima;Calidad;Soles;12000;14000
+Perú;Pequeña y Mediana;Planta;Jefatura;Lima;Ingeniería;Soles;10000;14000
+Perú;Pequeña y Mediana;Planta;Jefatura;Lima;Mejora Continua;Soles;12000;14000
+Perú;Pequeña y Mediana;Planta;Jefatura;Lima;EHS;Soles;9000;12000
+Perú;Pequeña y Mediana;Planta;Jefatura;Lima;I&D;Soles;9000;12000
+Perú;Pequeña y Mediana;Planta;Especialista;Lima;Producción;Soles;6000;9000
+Perú;Pequeña y Mediana;Planta;Especialista;Lima;Mantenimiento;Soles;6000;9000
+Perú;Pequeña y Mediana;Planta;Especialista;Lima;Calidad;Soles;6000;9000
+Perú;Pequeña y Mediana;Planta;Especialista;Lima;Ingeniería;Soles;6000;9000
+Perú;Pequeña y Mediana;Planta;Especialista;Lima;Mejora Continua;Soles;8000;12000
+Perú;Pequeña y Mediana;Planta;Especialista;Lima;EHS;Soles;8000;12000
+Perú;Pequeña y Mediana;Planta;Especialista;Lima;I&D;Soles;8000;12000
+Perú;Grande;Supply Chain;Dirección;Lima;Logística;Soles;30000;45000
+Perú;Grande;Supply Chain;Dirección;Lima;Abastecimiento;Soles;30000;45000
+Perú;Grande;Supply Chain;Dirección;Lima;Planeamiento;Soles;30000;45000
+Perú;Grande;Supply Chain;Dirección;Lima;Compras;Soles;30000;45000
+Perú;Grande;Supply Chain;Dirección;Lima;Comercio Exterior;Soles;30000;45000
+Perú;Grande;Supply Chain;Dirección;Lima;Customer Service;Soles;30000;45000
+Perú;Grande;Supply Chain;Gerencia;Lima;Logística;Soles;20000;30000
+Perú;Grande;Supply Chain;Gerencia;Lima;Abastecimiento;Soles;20000;30000
+Perú;Grande;Supply Chain;Gerencia;Lima;Planeamiento;Soles;20000;30000
+Perú;Grande;Supply Chain;Gerencia;Lima;Compras;Soles;20000;30000
+Perú;Grande;Supply Chain;Gerencia;Lima;Comercio Exterior;Soles;20000;30000
+Perú;Grande;Supply Chain;Gerencia;Lima;Customer Service;Soles;20000;30000
+Perú;Grande;Supply Chain;Jefatura;Lima;Logística;Soles;12000;16000
+Perú;Grande;Supply Chain;Jefatura;Lima;Abastecimiento;Soles;12000;16000
+Perú;Grande;Supply Chain;Jefatura;Lima;Planeamiento;Soles;14000;16000
+Perú;Grande;Supply Chain;Jefatura;Lima;Compras;Soles;14000;16000
+Perú;Grande;Supply Chain;Jefatura;Lima;Comercio Exterior;Soles;14000;16000
+Perú;Grande;Supply Chain;Jefatura;Lima;Customer Service;Soles;12000;16000
+Perú;Grande;Supply Chain;Especialista;Lima;Logística;Soles;8000;12000
+Perú;Grande;Supply Chain;Especialista;Lima;Abastecimiento;Soles;8000;12000
+Perú;Grande;Supply Chain;Especialista;Lima;Planeamiento;Soles;8000;12000
+Perú;Grande;Supply Chain;Especialista;Lima;Compras;Soles;8000;12000
+Perú;Grande;Supply Chain;Especialista;Lima;Comercio Exterior;Soles;8000;12000
+Perú;Grande;Supply Chain;Especialista;Lima;Customer Service;Soles;8000;12000
+Perú;Pequeña y Mediana;Supply Chain;Dirección;Lima;Logística;Soles;25000;35000
+Perú;Pequeña y Mediana;Supply Chain;Dirección;Lima;Abastecimiento;Soles;25000;35000
+Perú;Pequeña y Mediana;Supply Chain;Dirección;Lima;Planeamiento;Soles;25000;35000
+Perú;Pequeña y Mediana;Supply Chain;Dirección;Lima;Compras;Soles;25000;35000
+Perú;Pequeña y Mediana;Supply Chain;Dirección;Lima;Comercio Exterior;Soles;25000;35000
+Perú;Pequeña y Mediana;Supply Chain;Dirección;Lima;Customer Service;Soles;25000;35000
+Perú;Pequeña y Mediana;Supply Chain;Gerencia;Lima;Logística;Soles;15000;20000
+Perú;Pequeña y Mediana;Supply Chain;Gerencia;Lima;Abastecimiento;Soles;15000;20000
+Perú;Pequeña y Mediana;Supply Chain;Gerencia;Lima;Planeamiento;Soles;15000;20000
+Perú;Pequeña y Mediana;Supply Chain;Gerencia;Lima;Compras;Soles;15000;20000
+Perú;Pequeña y Mediana;Supply Chain;Gerencia;Lima;Comercio Exterior;Soles;15000;20000
+Perú;Pequeña y Mediana;Supply Chain;Gerencia;Lima;Customer Service;Soles;15000;20000
+Perú;Pequeña y Mediana;Supply Chain;Jefatura;Lima;Logística;Soles;10000;14000
+Perú;Pequeña y Mediana;Supply Chain;Jefatura;Lima;Abastecimiento;Soles;10000;14000
+Perú;Pequeña y Mediana;Supply Chain;Jefatura;Lima;Planeamiento;Soles;10000;14000
+Perú;Pequeña y Mediana;Supply Chain;Jefatura;Lima;Compras;Soles;10000;14000
+Perú;Pequeña y Mediana;Supply Chain;Jefatura;Lima;Comercio Exterior;Soles;10000;12000
+Perú;Pequeña y Mediana;Supply Chain;Jefatura;Lima;Customer Service;Soles;10000;12000
+Perú;Pequeña y Mediana;Supply Chain;Especialista;Lima;Logística;Soles;8000;12000
+Perú;Pequeña y Mediana;Supply Chain;Especialista;Lima;Abastecimiento;Soles;6000;9000
+Perú;Pequeña y Mediana;Supply Chain;Especialista;Lima;Planeamiento;Soles;6000;9000
+Perú;Pequeña y Mediana;Supply Chain;Especialista;Lima;Compras;Soles;6000;9000
+Perú;Pequeña y Mediana;Supply Chain;Especialista;Lima;Comercio Exterior;Soles;6000;9000
+Perú;Pequeña y Mediana;Supply Chain;Especialista;Lima;Customer Service;Soles;6000;9000
+Perú;Grande;Ventas Técnicas;Dirección;Lima;Ingeniero de Ventas;Soles;30000;45000
+Perú;Grande;Ventas Técnicas;Dirección;Lima;Ventas (B2B);Soles;30000;45000
+Perú;Grande;Ventas Técnicas;Gerencia;Lima;Ingeniero de Ventas;Soles;25000;35000
+Perú;Grande;Ventas Técnicas;Gerencia;Lima;Ventas (B2B);Soles;25000;35000
+Perú;Grande;Ventas Técnicas;Jefatura;Lima;Ingeniero de Ventas;Soles;11000;14500
+Perú;Grande;Ventas Técnicas;Jefatura;Lima;Ventas (B2B);Soles;10000;14000
+Perú;Grande;Ventas Técnicas;Especialista;Lima;Ingeniero de Ventas;Soles;12000;18000
+Perú;Grande;Ventas Técnicas;Especialista;Lima;Ventas (B2B);Soles;6000;9000
+Perú;Pequeña y Mediana;Ventas Técnicas;Dirección;Lima;Ingeniero de Ventas;Soles;25000;45000
+Perú;Pequeña y Mediana;Ventas Técnicas;Dirección;Lima;Ventas (B2B);Soles;25000;45000
+Perú;Pequeña y Mediana;Ventas Técnicas;Gerencia;Lima;Ingeniero de Ventas;Soles;13000;24000
+Perú;Pequeña y Mediana;Ventas Técnicas;Gerencia;Lima;Ventas (B2B);Soles;13000;24000
+Perú;Pequeña y Mediana;Ventas Técnicas;Jefatura;Lima;Ingeniero de Ventas;Soles;8000;12000
+Perú;Pequeña y Mediana;Ventas Técnicas;Jefatura;Lima;Ventas (B2B);Soles;8000;12000
+Perú;Pequeña y Mediana;Ventas Técnicas;Especialista;Lima;Ingeniero de Ventas;Soles;8000;9000
+Perú;Pequeña y Mediana;Ventas Técnicas;Especialista;Lima;Ventas (B2B);Soles;8000;9000
+Perú;Grande;Recursos Humanos;Gerencia;Lima;Recursos Humanos;Soles;30000;40000
+Perú;Grande;Recursos Humanos;Gerencia;Lima;HRBP de Operaciones;Soles;18000;23000
+Perú;Grande;Recursos Humanos;Gerencia;Lima;Relaciones Laborales;Soles;18000;23000
+Perú;Grande;Recursos Humanos;Jefatura;Lima;Recursos Humanos;Soles;10000;14000
+Perú;Grande;Recursos Humanos;Jefatura;Lima;HRBP de Operaciones;Soles;10000;14000
+Perú;Grande;Recursos Humanos;Jefatura;Lima;Relaciones Laborales;Soles;10000;14000
+Perú;Grande;Recursos Humanos;Especialista;Lima;Recursos Humanos;Soles;8000;12000
+Perú;Grande;Recursos Humanos;Especialista;Lima;HRBP de Operaciones;Soles;8000;12000
+Perú;Grande;Recursos Humanos;Especialista;Lima;Relaciones Laborales;Soles;8000;12000
+Perú;Pequeña y Mediana;Recursos Humanos;Gerencia;Lima;Recursos Humanos;Soles;15000;20000
+Perú;Pequeña y Mediana;Recursos Humanos;Gerencia;Lima;HRBP de Operaciones;Soles;12000;17000
+Perú;Pequeña y Mediana;Recursos Humanos;Gerencia;Lima;Relaciones Laborales;Soles;12000;17000
+Perú;Pequeña y Mediana;Recursos Humanos;Jefatura;Lima;Recursos Humanos;Soles;9000;13000
+Perú;Pequeña y Mediana;Recursos Humanos;Jefatura;Lima;HRBP de Operaciones;Soles;9000;13000
+Perú;Pequeña y Mediana;Recursos Humanos;Jefatura;Lima;Relaciones Laborales;Soles;9000;13000
+Perú;Pequeña y Mediana;Recursos Humanos;Especialista;Lima;Recursos Humanos;Soles;6500;9500
+Perú;Pequeña y Mediana;Recursos Humanos;Especialista;Lima;HRBP de Operaciones;Soles;6500;9500
+Perú;Pequeña y Mediana;Recursos Humanos;Especialista;Lima;Relaciones Laborales;Soles;6500;9500
+Perú;Grande;Recursos Humanos;Dirección;Lima;Recursos Humanos;Soles;30000;45000
+Perú;Grande;Recursos Humanos;Dirección;Lima;HRBP de Operaciones;Soles;30000;45000
+Perú;Grande;Recursos Humanos;Dirección;Lima;Relaciones Laborales;Soles;30000;45000
+Perú;Pequeña y Mediana;Recursos Humanos;Dirección;Lima;Recursos Humanos;Soles;22000;30000
+Perú;Pequeña y Mediana;Recursos Humanos;Dirección;Lima;HRBP de Operaciones;Soles;18000;22000
+Perú;Pequeña y Mediana;Recursos Humanos;Dirección;Lima;Relaciones Laborales;Soles;18000;22000
+Perú;Grande;Planta;Dirección;Provincia;Producción;Soles;28000;40000
+Perú;Grande;Planta;Dirección;Provincia;Mantenimiento;Soles;28000;40000
+Perú;Grande;Planta;Dirección;Provincia;Calidad;Soles;28000;40000
+Perú;Grande;Planta;Dirección;Provincia;Ingeniería;Soles;28000;40000
+Perú;Grande;Planta;Dirección;Provincia;Mejora Continua;Soles;28000;40000
+Perú;Grande;Planta;Dirección;Provincia;EHS;Soles;28000;40000
+Perú;Grande;Planta;Dirección;Provincia;I&D;Soles;28000;40000
+Perú;Grande;Planta;Gerencia;Provincia;Producción;Soles;18000;25000
+Perú;Grande;Planta;Gerencia;Provincia;Mantenimiento;Soles;18000;25000
+Perú;Grande;Planta;Gerencia;Provincia;Calidad;Soles;18000;25000
+Perú;Grande;Planta;Gerencia;Provincia;Ingeniería;Soles;18000;25000
+Perú;Grande;Planta;Gerencia;Provincia;Mejora Continua;Soles;18000;25000
+Perú;Grande;Planta;Gerencia;Provincia;EHS;Soles;18000;25000
+Perú;Grande;Planta;Gerencia;Provincia;I&D;Soles;18000;25000
+Perú;Grande;Planta;Jefatura;Provincia;Producción;Soles;10000;16000
+Perú;Grande;Planta;Jefatura;Provincia;Mantenimiento;Soles;10000;16000
+Perú;Grande;Planta;Jefatura;Provincia;Calidad;Soles;10000;16000
+Perú;Grande;Planta;Jefatura;Provincia;Ingeniería;Soles;10000;16000
+Perú;Grande;Planta;Jefatura;Provincia;Mejora Continua;Soles;10000;16000
+Perú;Grande;Planta;Jefatura;Provincia;EHS;Soles;10000;16000
+Perú;Grande;Planta;Jefatura;Provincia;I&D;Soles;10000;16000
+Perú;Grande;Planta;Especialista;Provincia;Producción;Soles;7000;10500
+Perú;Grande;Planta;Especialista;Provincia;Mantenimiento;Soles;7000;10500
+Perú;Grande;Planta;Especialista;Provincia;Calidad;Soles;7000;10500
+Perú;Grande;Planta;Especialista;Provincia;Ingeniería;Soles;7000;10500
+Perú;Grande;Planta;Especialista;Provincia;Mejora Continua;Soles;7000;10500
+Perú;Grande;Planta;Especialista;Provincia;EHS;Soles;7000;10500
+Perú;Grande;Planta;Especialista;Provincia;I&D;Soles;7000;10500
+Perú;Pequeña y Mediana;Planta;Dirección;Provincia;Producción;Soles;25000;35000
+Perú;Pequeña y Mediana;Planta;Dirección;Provincia;Mantenimiento;Soles;25000;35000
+Perú;Pequeña y Mediana;Planta;Dirección;Provincia;Calidad;Soles;25000;35000
+Perú;Pequeña y Mediana;Planta;Dirección;Provincia;Ingeniería;Soles;25000;35000
+Perú;Pequeña y Mediana;Planta;Dirección;Provincia;Mejora Continua;Soles;25000;35000
+Perú;Pequeña y Mediana;Planta;Dirección;Provincia;EHS;Soles;25000;35000
+Perú;Pequeña y Mediana;Planta;Dirección;Provincia;I&D;Soles;25000;35000
+Perú;Pequeña y Mediana;Planta;Gerencia;Provincia;Producción;Soles;13000;18000
+Perú;Pequeña y Mediana;Planta;Gerencia;Provincia;Mantenimiento;Soles;13000;18000
+Perú;Pequeña y Mediana;Planta;Gerencia;Provincia;Calidad;Soles;13000;18000
+Perú;Pequeña y Mediana;Planta;Gerencia;Provincia;Ingeniería;Soles;13000;18000
+Perú;Pequeña y Mediana;Planta;Gerencia;Provincia;Mejora Continua;Soles;13000;18000
+Perú;Pequeña y Mediana;Planta;Gerencia;Provincia;EHS;Soles;13000;18000
+Perú;Pequeña y Mediana;Planta;Gerencia;Provincia;I&D;Soles;13000;18000
+Perú;Pequeña y Mediana;Planta;Jefatura;Provincia;Producción;Soles;9000;12000
+Perú;Pequeña y Mediana;Planta;Jefatura;Provincia;Mantenimiento;Soles;9000;12000
+Perú;Pequeña y Mediana;Planta;Jefatura;Provincia;Calidad;Soles;9000;12000
+Perú;Pequeña y Mediana;Planta;Jefatura;Provincia;Ingeniería;Soles;9000;12000
+Perú;Pequeña y Mediana;Planta;Jefatura;Provincia;Mejora Continua;Soles;9000;12000
+Perú;Pequeña y Mediana;Planta;Jefatura;Provincia;EHS;Soles;9000;12000
+Perú;Pequeña y Mediana;Planta;Jefatura;Provincia;I&D;Soles;9000;12000
+Perú;Pequeña y Mediana;Planta;Especialista;Provincia;Producción;Soles;5000;8000
+Perú;Pequeña y Mediana;Planta;Especialista;Provincia;Mantenimiento;Soles;5000;8000
+Perú;Pequeña y Mediana;Planta;Especialista;Provincia;Calidad;Soles;5000;8000
+Perú;Pequeña y Mediana;Planta;Especialista;Provincia;Ingeniería;Soles;5000;8000
+Perú;Pequeña y Mediana;Planta;Especialista;Provincia;Mejora Continua;Soles;5000;8000
+Perú;Pequeña y Mediana;Planta;Especialista;Provincia;EHS;Soles;5000;8000
+Perú;Pequeña y Mediana;Planta;Especialista;Provincia;I&D;Soles;5000;8000
+Perú;Grande;Supply Chain;Dirección;Provincia;Logística;Soles;30000;40000
+Perú;Grande;Supply Chain;Dirección;Provincia;Abastecimiento;Soles;25000;35000
+Perú;Grande;Supply Chain;Dirección;Provincia;Planeamiento;Soles;25000;35000
+Perú;Grande;Supply Chain;Dirección;Provincia;Compras;Soles;25000;35000
+Perú;Grande;Supply Chain;Dirección;Provincia;Comercio Exterior;Soles;25000;35000
+Perú;Grande;Supply Chain;Dirección;Provincia;Customer Service;Soles;25000;35000
+Perú;Grande;Supply Chain;Gerencia;Provincia;Logística;Soles;18000;25000
+Perú;Grande;Supply Chain;Gerencia;Provincia;Abastecimiento;Soles;18000;25000
+Perú;Grande;Supply Chain;Gerencia;Provincia;Planeamiento;Soles;18000;25000
+Perú;Grande;Supply Chain;Gerencia;Provincia;Compras;Soles;18000;25000
+Perú;Grande;Supply Chain;Gerencia;Provincia;Comercio Exterior;Soles;18000;25000
+Perú;Grande;Supply Chain;Gerencia;Provincia;Customer Service;Soles;18000;25000
+Perú;Grande;Supply Chain;Jefatura;Provincia;Logística;Soles;10000;13000
+Perú;Grande;Supply Chain;Jefatura;Provincia;Abastecimiento;Soles;10000;13000
+Perú;Grande;Supply Chain;Jefatura;Provincia;Planeamiento;Soles;10000;13000
+Perú;Grande;Supply Chain;Jefatura;Provincia;Compras;Soles;10000;13000
+Perú;Grande;Supply Chain;Jefatura;Provincia;Comercio Exterior;Soles;10000;13000
+Perú;Grande;Supply Chain;Jefatura;Provincia;Customer Service;Soles;10000;13000
+Perú;Grande;Supply Chain;Especialista;Provincia;Logística;Soles;7500;11500
+Perú;Grande;Supply Chain;Especialista;Provincia;Abastecimiento;Soles;7500;11500
+Perú;Grande;Supply Chain;Especialista;Provincia;Planeamiento;Soles;7500;11500
+Perú;Grande;Supply Chain;Especialista;Provincia;Compras;Soles;7500;11500
+Perú;Grande;Supply Chain;Especialista;Provincia;Comercio Exterior;Soles;7500;11500
+Perú;Grande;Supply Chain;Especialista;Provincia;Customer Service;Soles;7500;11500
+Perú;Pequeña y Mediana;Supply Chain;Dirección;Provincia;Logística;Soles;20000;30000
+Perú;Pequeña y Mediana;Supply Chain;Dirección;Provincia;Abastecimiento;Soles;20000;30000
+Perú;Pequeña y Mediana;Supply Chain;Dirección;Provincia;Planeamiento;Soles;20000;30000
+Perú;Pequeña y Mediana;Supply Chain;Dirección;Provincia;Compras;Soles;20000;30000
+Perú;Pequeña y Mediana;Supply Chain;Dirección;Provincia;Comercio Exterior;Soles;20000;30000
+Perú;Pequeña y Mediana;Supply Chain;Dirección;Provincia;Customer Service;Soles;20000;30000
+Perú;Pequeña y Mediana;Supply Chain;Gerencia;Provincia;Logística;Soles;13000;18000
+Perú;Pequeña y Mediana;Supply Chain;Gerencia;Provincia;Abastecimiento;Soles;13000;18000
+Perú;Pequeña y Mediana;Supply Chain;Gerencia;Provincia;Planeamiento;Soles;13000;18000
+Perú;Pequeña y Mediana;Supply Chain;Gerencia;Provincia;Compras;Soles;13000;18000
+Perú;Pequeña y Mediana;Supply Chain;Gerencia;Provincia;Comercio Exterior;Soles;13000;18000
+Perú;Pequeña y Mediana;Supply Chain;Gerencia;Provincia;Customer Service;Soles;13000;18000
+Perú;Pequeña y Mediana;Supply Chain;Jefatura;Provincia;Logística;Soles;9000;11000
+Perú;Pequeña y Mediana;Supply Chain;Jefatura;Provincia;Abastecimiento;Soles;9000;11000
+Perú;Pequeña y Mediana;Supply Chain;Jefatura;Provincia;Planeamiento;Soles;9000;11000
+Perú;Pequeña y Mediana;Supply Chain;Jefatura;Provincia;Compras;Soles;9000;11000
+Perú;Pequeña y Mediana;Supply Chain;Jefatura;Provincia;Comercio Exterior;Soles;9000;11000
+Perú;Pequeña y Mediana;Supply Chain;Jefatura;Provincia;Customer Service;Soles;9000;11000
+Perú;Pequeña y Mediana;Supply Chain;Especialista;Provincia;Logística;Soles;6000;9000
+Perú;Pequeña y Mediana;Supply Chain;Especialista;Provincia;Abastecimiento;Soles;6000;9000
+Perú;Pequeña y Mediana;Supply Chain;Especialista;Provincia;Planeamiento;Soles;6000;9000
+Perú;Pequeña y Mediana;Supply Chain;Especialista;Provincia;Compras;Soles;6000;9000
+Perú;Pequeña y Mediana;Supply Chain;Especialista;Provincia;Comercio Exterior;Soles;6000;9000
+Perú;Pequeña y Mediana;Supply Chain;Especialista;Provincia;Customer Service;Soles;6000;9000
+Perú;Grande;Ventas Técnicas;Dirección;Provincia;Ingeniero de Ventas;Soles;30000;45000
+Perú;Grande;Ventas Técnicas;Dirección;Provincia;Ventas (B2B);Soles;30000;45000
+Perú;Grande;Ventas Técnicas;Gerencia;Provincia;Ingeniero de Ventas;Soles;20000;28000
+Perú;Grande;Ventas Técnicas;Gerencia;Provincia;Ventas (B2B);Soles;20000;28000
+Perú;Grande;Ventas Técnicas;Jefatura;Provincia;Ingeniero de Ventas;Soles;8500;10000
+Perú;Grande;Ventas Técnicas;Jefatura;Provincia;Ventas (B2B);Soles;8500;10000
+Perú;Grande;Ventas Técnicas;Especialista;Provincia;Ingeniero de Ventas;Soles;6000;8000
+Perú;Grande;Ventas Técnicas;Especialista;Provincia;Ventas (B2B);Soles;6000;8000
+Perú;Pequeña y Mediana;Ventas Técnicas;Dirección;Provincia;Ingeniero de Ventas;Soles;25000;35000
+Perú;Pequeña y Mediana;Ventas Técnicas;Dirección;Provincia;Ventas (B2B);Soles;25000;35000
+Perú;Pequeña y Mediana;Ventas Técnicas;Gerencia;Provincia;Ingeniero de Ventas;Soles;13000;24000
+Perú;Pequeña y Mediana;Ventas Técnicas;Gerencia;Provincia;Ventas (B2B);Soles;13000;24000
+Perú;Pequeña y Mediana;Ventas Técnicas;Jefatura;Provincia;Ingeniero de Ventas;Soles;7000;9000
+Perú;Pequeña y Mediana;Ventas Técnicas;Jefatura;Provincia;Ventas (B2B);Soles;7000;9000
+Perú;Pequeña y Mediana;Ventas Técnicas;Especialista;Provincia;Ingeniero de Ventas;Soles;5000;7500
+Perú;Pequeña y Mediana;Ventas Técnicas;Especialista;Provincia;Ventas (B2B);Soles;5000;7500
+Perú;Grande;Recursos Humanos;Dirección;Provincia;Recursos Humanos;Soles;25000;40000
+Perú;Grande;Recursos Humanos;Dirección;Provincia;HRBP de Operaciones;Soles;18000;28000
+Perú;Grande;Recursos Humanos;Dirección;Provincia;Relaciones Laborales;Soles;18000;28000
+Perú;Grande;Recursos Humanos;Gerencia;Provincia;Recursos Humanos;Soles;25000;35000
+Perú;Grande;Recursos Humanos;Gerencia;Provincia;HRBP de Operaciones;Soles;15000;20000
+Perú;Grande;Recursos Humanos;Gerencia;Provincia;Relaciones Laborales;Soles;15000;20000
+Perú;Grande;Recursos Humanos;Jefatura;Provincia;Recursos Humanos;Soles;9000;12000
+Perú;Grande;Recursos Humanos;Jefatura;Provincia;HRBP de Operaciones;Soles;9000;12000
+Perú;Grande;Recursos Humanos;Jefatura;Provincia;Relaciones Laborales;Soles;9000;12000
+Perú;Grande;Recursos Humanos;Especialista;Provincia;Recursos Humanos;Soles;5000;8000
+Perú;Grande;Recursos Humanos;Especialista;Provincia;HRBP de Operaciones;Soles;5000;8000
+Perú;Grande;Recursos Humanos;Especialista;Provincia;Relaciones Laborales;Soles;5000;8000
+Perú;Pequeña y Mediana;Recursos Humanos;Dirección;Provincia;Recursos Humanos;Soles;20000;25000
+Perú;Pequeña y Mediana;Recursos Humanos;Dirección;Provincia;HRBP de Operaciones;Soles;15000;23000
+Perú;Pequeña y Mediana;Recursos Humanos;Dirección;Provincia;Relaciones Laborales;Soles;15000;23000
+Perú;Pequeña y Mediana;Recursos Humanos;Gerencia;Provincia;Recursos Humanos;Soles;13000;18000
+Perú;Pequeña y Mediana;Recursos Humanos;Gerencia;Provincia;HRBP de Operaciones;Soles;10000;12000
+Perú;Pequeña y Mediana;Recursos Humanos;Gerencia;Provincia;Relaciones Laborales;Soles;10000;12000
+Perú;Pequeña y Mediana;Recursos Humanos;Jefatura;Provincia;Recursos Humanos;Soles;9000;14000
+Perú;Pequeña y Mediana;Recursos Humanos;Jefatura;Provincia;HRBP de Operaciones;Soles;9000;14000
+Perú;Pequeña y Mediana;Recursos Humanos;Jefatura;Provincia;Relaciones Laborales;Soles;9000;14000
+Perú;Pequeña y Mediana;Recursos Humanos;Especialista;Provincia;Recursos Humanos;Soles;5000;7000
+Perú;Pequeña y Mediana;Recursos Humanos;Especialista;Provincia;HRBP de Operaciones;Soles;5000;7000
+Perú;Pequeña y Mediana;Recursos Humanos;Especialista;Provincia;Relaciones Laborales;Soles;5000;7000
+Colombia;Grande;Planta;Dirección;Centro;Operaciones;COP;40200000;63200000
+Colombia;Grande;Planta;Dirección;Noroccidental;Planta;COP;42100000;66100000
+Colombia;Grande;Planta;Dirección;Pacifico;Planta;COP;39800000;62600000
+Colombia;Grande;Planta;Dirección;Norte;Operaciones;COP;36200000;56900000
+Colombia;Mediana;Planta;Dirección;Centro;Planta;COP;32700000;51400000
+Colombia;Mediana;Planta;Dirección;Noroccidental;Operaciones;COP;28300000;44400000
+Colombia;Mediana;Planta;Dirección;Pacifico;Planta;COP;29500000;46300000
+Colombia;Mediana;Planta;Dirección;Norte;Planta;COP;29500000;46300000
+Colombia;Pequeña;Planta;Dirección;Centro;Planta;COP;25000000;39300000
+Colombia;Pequeña;Planta;Dirección;Noroccidental;Planta;COP;23800000;37400000
+Colombia;Pequeña;Planta;Dirección;Pacifico;Planta;COP;22500000;35400000
+Colombia;Pequeña;Planta;Dirección;Norte;Planta;COP;22500000;35400000
+Colombia;Grande;Planta;Gerencia;Centro;Mejora;COP;20700000;34500000
+Colombia;Grande;Planta;Gerencia;Noroccidental;Calidad;COP;19700000;32800000
+Colombia;Grande;Planta;Gerencia;Pacifico;Calidad;COP;18600000;31000000
+Colombia;Grande;Planta;Gerencia;Norte;Mejora;COP;18600000;31000000
+Colombia;Mediana;Planta;Gerencia;Centro;Planta;COP;16800000;28100000
+Colombia;Mediana;Planta;Gerencia;Noroccidental;Producción;COP;14500000;24200000
+Colombia;Mediana;Planta;Gerencia;Pacifico;Mantenimiento;COP;13800000;23000000
+Colombia;Mediana;Planta;Gerencia;Norte;Calidad;COP;13800000;23000000
+Colombia;Pequeña;Planta;Gerencia;Centro;Planta;COP;12900000;21400000
+Colombia;Pequeña;Planta;Gerencia;Noroccidental;Ingeniería;COP;11100000;18500000
+Colombia;Pequeña;Planta;Gerencia;Pacifico;Ingeniería;COP;10500000;17600000
+Colombia;Pequeña;Planta;Gerencia;Norte;Ingeniería;COP;10500000;17600000
+Colombia;Grande;Planta;Jefatura;Centro;Planta;COP;10100000;17700000
+Colombia;Grande;Planta;Jefatura;Noroccidental;Planta;COP;9600000;16800000
+Colombia;Grande;Planta;Jefatura;Pacifico;Mantenimiento;COP;8300000;14500000
+Colombia;Grande;Planta;Jefatura;Norte;Mantenimiento;COP;8300000;14500000
+Colombia;Mediana;Planta;Jefatura;Centro;Calidad;COP;6800000;11900000
+Colombia;Mediana;Planta;Jefatura;Noroccidental;Producción;COP;6500000;11300000
+Colombia;Mediana;Planta;Jefatura;Pacifico;Ingeniería;COP;6100000;10700000
+Colombia;Mediana;Planta;Jefatura;Norte;Calidad;COP;6100000;10700000
+Colombia;Pequeña;Planta;Jefatura;Centro;Mantenimiento;COP;5200000;9100000
+Colombia;Pequeña;Planta;Jefatura;Noroccidental;Calidad;COP;4900000;8600000
+Colombia;Pequeña;Planta;Jefatura;Pacifico;Mantenimiento;COP;4700000;8200000
+Colombia;Pequeña;Planta;Jefatura;Norte;Calidad;COP;4700000;8200000
+Colombia;Grande;Planta;Especialista;Centro;Procesos;COP;5800000;9200000
+Colombia;Grande;Planta;Especialista;Noroccidental;Mantenimiento;COP;5500000;8700000
+Colombia;Grande;Planta;Especialista;Pacifico;Producción;COP;5200000;8300000
+Colombia;Grande;Planta;Especialista;Norte;Procesos;COP;5200000;8300000
+Colombia;Mediana;Planta;Especialista;Centro;Producción;COP;4200000;6800000
+Colombia;Mediana;Planta;Especialista;Noroccidental;Proyectos;COP;4000000;6500000
+Colombia;Mediana;Planta;Especialista;Pacifico;Mantenimiento;COP;3800000;6100000
+Colombia;Mediana;Planta;Especialista;Norte;Producción;COP;3800000;6100000
+Colombia;Pequeña;Planta;Especialista;Centro;Confiabilidad;COP;3200000;5200000
+Colombia;Pequeña;Planta;Especialista;Noroccidental;Confiabilidad;COP;3100000;4900000
+Colombia;Pequeña;Planta;Especialista;Pacifico;Confiabilidad;COP;2900000;4700000
+Colombia;Pequeña;Planta;Especialista;Norte;Producción;COP;2900000;4700000
+Colombia;Grande;Supply Chain;Dirección;Centro;Supply;COP;44300000;69600000
+Colombia;Grande;Supply Chain;Dirección;Noroccidental;Logística;COP;38200000;60100000
+Colombia;Grande;Supply Chain;Dirección;Pacifico;Logística;COP;36200000;56900000
+Colombia;Grande;Supply Chain;Dirección;Norte;Supply;COP;39800000;62600000
+Colombia;Mediana;Supply Chain;Dirección;Centro;Logística;COP;29800000;46800000
+Colombia;Mediana;Supply Chain;Dirección;Noroccidental;Logística;COP;28300000;44400000
+Colombia;Mediana;Supply Chain;Dirección;Pacifico;Logística;COP;26800000;42100000
+Colombia;Mediana;Supply Chain;Dirección;Norte;Supply;COP;29500000;46300000
+Colombia;Pequeña;Supply Chain;Dirección;Centro;Logística;COP;22800000;35800000
+Colombia;Pequeña;Supply Chain;Dirección;Noroccidental;Logística;COP;21600000;34000000
+Colombia;Pequeña;Supply Chain;Dirección;Pacifico;Supply;COP;22500000;35400000
+Colombia;Pequeña;Supply Chain;Dirección;Norte;Supply;COP;22500000;35400000
+Colombia;Grande;Supply Chain;Gerencia;Centro;Compras;COP;20700000;34500000
+Colombia;Grande;Supply Chain;Gerencia;Noroccidental;Logística;COP;19700000;32800000
+Colombia;Grande;Supply Chain;Gerencia;Pacifico;Planeación;COP;18600000;31000000
+Colombia;Grande;Supply Chain;Gerencia;Norte;Compras;COP;18600000;31000000
+Colombia;Mediana;Supply Chain;Gerencia;Centro;Supply;COP;15300000;25500000
+Colombia;Mediana;Supply Chain;Gerencia;Noroccidental;Comercio;COP;14500000;24200000
+Colombia;Mediana;Supply Chain;Gerencia;Pacifico;Logística;COP;13800000;23000000
+Colombia;Mediana;Supply Chain;Gerencia;Norte;Supply;COP;13800000;23000000
+Colombia;Pequeña;Supply Chain;Gerencia;Centro;Supply;COP;11700000;19500000
+Colombia;Pequeña;Supply Chain;Gerencia;Noroccidental;Logística;COP;11100000;18500000
+Colombia;Pequeña;Supply Chain;Gerencia;Pacifico;Supply;COP;10500000;17600000
+Colombia;Pequeña;Supply Chain;Gerencia;Norte;Compras;COP;10500000;17600000
+Colombia;Grande;Supply Chain;Jefatura;Centro;CEDI;COP;9200000;16100000
+Colombia;Grande;Supply Chain;Jefatura;Noroccidental;CEDI;COP;8700000;15300000
+Colombia;Grande;Supply Chain;Jefatura;Pacifico;Transporte;COP;8300000;14500000
+Colombia;Grande;Supply Chain;Jefatura;Norte;CEDI;COP;8300000;14500000
+Colombia;Mediana;Supply Chain;Jefatura;Centro;Transporte;COP;6800000;11900000
+Colombia;Mediana;Supply Chain;Jefatura;Noroccidental;Compras;COP;6500000;11300000
+Colombia;Mediana;Supply Chain;Jefatura;Pacifico;Compras;COP;6100000;10700000
+Colombia;Mediana;Supply Chain;Jefatura;Norte;CEDI;COP;6100000;10700000
+Colombia;Pequeña;Supply Chain;Jefatura;Centro;Importaciones/Exportaciones;COP;5200000;9100000
+Colombia;Pequeña;Supply Chain;Jefatura;Noroccidental;Importaciones/Exportaciones;COP;4900000;8600000
+Colombia;Pequeña;Supply Chain;Jefatura;Pacifico;CEDI;COP;4700000;8200000
+Colombia;Pequeña;Supply Chain;Jefatura;Norte;Transporte;COP;4700000;8200000
+Colombia;Grande;Supply Chain;Especialista;Centro;Planeación;COP;5800000;9200000
+Colombia;Grande;Supply Chain;Especialista;Noroccidental;Inventarios;COP;5500000;8700000
+Colombia;Grande;Supply Chain;Especialista;Pacifico;Materiales;COP;5200000;8300000
+Colombia;Grande;Supply Chain;Especialista;Norte;Planeación;COP;5200000;8300000
+Colombia;Mediana;Supply Chain;Especialista;Centro;Planeación;COP;4200000;6800000
+Colombia;Mediana;Supply Chain;Especialista;Noroccidental;Planeación;COP;4000000;6500000
+Colombia;Mediana;Supply Chain;Especialista;Pacifico;Planeación;COP;3800000;6100000
+Colombia;Mediana;Supply Chain;Especialista;Norte;Inventarios;COP;3800000;6100000
+Colombia;Pequeña;Supply Chain;Especialista;Centro;Inventarios;COP;3200000;5200000
+Colombia;Pequeña;Supply Chain;Especialista;Noroccidental;Inventarios;COP;3100000;4900000
+Colombia;Pequeña;Supply Chain;Especialista;Pacifico;Planeación;COP;2900000;4700000
+Colombia;Pequeña;Supply Chain;Especialista;Norte;Materiales;COP;2900000;4700000
+Colombia;Grande;Recursos Humanos;Dirección;Centro;Gestión;COP;40200000;63200000
+Colombia;Grande;Recursos Humanos;Dirección;Noroccidental;Talento;COP;38200000;60100000
+Colombia;Grande;Recursos Humanos;Dirección;Pacifico;Gestión;COP;36200000;56900000
+Colombia;Grande;Recursos Humanos;Dirección;Norte;Talento;COP;36200000;56900000
+Colombia;Mediana;Recursos Humanos;Dirección;Centro;Talento;COP;29800000;46800000
+Colombia;Mediana;Recursos Humanos;Dirección;Noroccidental;Talento;COP;28300000;44400000
+Colombia;Mediana;Recursos Humanos;Dirección;Pacifico;Gestión;COP;26800000;42100000
+Colombia;Mediana;Recursos Humanos;Dirección;Norte;Gestión;COP;26800000;42100000
+Colombia;Pequeña;Recursos Humanos;Dirección;Centro;Gestión;COP;22800000;35800000
+Colombia;Pequeña;Recursos Humanos;Dirección;Noroccidental;Talento;COP;21600000;34000000
+Colombia;Pequeña;Recursos Humanos;Dirección;Pacifico;Gestión;COP;20500000;32200000
+Colombia;Pequeña;Recursos Humanos;Dirección;Norte;Talento;COP;20500000;32200000
+Colombia;Grande;Recursos Humanos;Gerencia;Centro;RRHH;COP;22800000;38000000
+Colombia;Grande;Recursos Humanos;Gerencia;Noroccidental;RRHH;COP;21600000;36100000
+Colombia;Grande;Recursos Humanos;Gerencia;Pacifico;Relaciones;COP;18600000;31000000
+Colombia;Grande;Recursos Humanos;Gerencia;Norte;Relaciones;COP;18600000;31000000
+Colombia;Mediana;Recursos Humanos;Gerencia;Centro;Relaciones;COP;15300000;25500000
+Colombia;Mediana;Recursos Humanos;Gerencia;Noroccidental;Relaciones;COP;14500000;24200000
+Colombia;Mediana;Recursos Humanos;Gerencia;Pacifico;Relaciones;COP;13800000;23000000
+Colombia;Mediana;Recursos Humanos;Gerencia;Norte;Relaciones;COP;13800000;23000000
+Colombia;Pequeña;Recursos Humanos;Gerencia;Centro;Relaciones;COP;11700000;19500000
+Colombia;Pequeña;Recursos Humanos;Gerencia;Noroccidental;Relaciones;COP;11100000;18500000
+Colombia;Pequeña;Recursos Humanos;Gerencia;Pacifico;Relaciones;COP;10500000;17600000
+Colombia;Pequeña;Recursos Humanos;Gerencia;Norte;RRHH;COP;11600000;19300000
+Colombia;Grande;Recursos Humanos;Jefatura;Centro;Selección;COP;9200000;16100000
+Colombia;Grande;Recursos Humanos;Jefatura;Noroccidental;Selección;COP;8700000;15300000
+Colombia;Grande;Recursos Humanos;Jefatura;Pacifico;Gestión;COP;8300000;14500000
+Colombia;Grande;Recursos Humanos;Jefatura;Norte;Gestión;COP;8300000;14500000
+Colombia;Mediana;Recursos Humanos;Jefatura;Centro;Nómina;COP;6800000;11900000
+Colombia;Mediana;Recursos Humanos;Jefatura;Noroccidental;Nómina;COP;6500000;11300000
+Colombia;Mediana;Recursos Humanos;Jefatura;Pacifico;Gestión;COP;6100000;10700000
+Colombia;Mediana;Recursos Humanos;Jefatura;Norte;Nómina;COP;6100000;10700000
+Colombia;Pequeña;Recursos Humanos;Jefatura;Centro;Selección;COP;5200000;9100000
+Colombia;Pequeña;Recursos Humanos;Jefatura;Noroccidental;Gestión;COP;4900000;8600000
+Colombia;Pequeña;Recursos Humanos;Jefatura;Pacifico;Gestión;COP;4700000;8200000
+Colombia;Pequeña;Recursos Humanos;Jefatura;Norte;Nómina;COP;4700000;8200000
+Colombia;Grande;Recursos Humanos;Especialista;Centro;Nómina;COP;5800000;9200000
+Colombia;Grande;Recursos Humanos;Especialista;Noroccidental;Nómina;COP;5500000;8700000
+Colombia;Grande;Recursos Humanos;Especialista;Pacifico;Nómina;COP;5200000;8300000
+Colombia;Grande;Recursos Humanos;Especialista;Norte;Nómina;COP;5200000;8300000
+Colombia;Mediana;Recursos Humanos;Especialista;Centro;RRHH;COP;4200000;6800000
+Colombia;Mediana;Recursos Humanos;Especialista;Noroccidental;RRHH;COP;4000000;6500000
+Colombia;Mediana;Recursos Humanos;Especialista;Pacifico;RRHH;COP;3800000;6100000
+Colombia;Mediana;Recursos Humanos;Especialista;Norte;RRHH;COP;3800000;6100000
+Colombia;Pequeña;Recursos Humanos;Especialista;Centro;RRHH;COP;3200000;5200000
+Colombia;Pequeña;Recursos Humanos;Especialista;Noroccidental;RRHH;COP;3100000;4900000
+Colombia;Pequeña;Recursos Humanos;Especialista;Pacifico;RRHH;COP;2900000;4700000
+Colombia;Pequeña;Recursos Humanos;Especialista;Norte;RRHH;COP;2900000;4700000
+Colombia;Grande;Ventas Técnicas;Dirección;Centro;Industrial;COP;42300000;66400000
+Colombia;Grande;Ventas Técnicas;Dirección;Noroccidental;Desarrollo;COP;38200000;60100000
+Colombia;Grande;Ventas Técnicas;Dirección;Pacifico;Industrial;COP;38000000;59800000
+Colombia;Grande;Ventas Técnicas;Dirección;Norte;Ventas;COP;38000000;59800000
+Colombia;Mediana;Ventas Técnicas;Dirección;Centro;Industrial;COP;31200000;49100000
+Colombia;Mediana;Ventas Técnicas;Dirección;Noroccidental;Industrial;COP;29700000;46600000
+Colombia;Mediana;Ventas Técnicas;Dirección;Pacifico;Industrial;COP;28100000;44200000
+Colombia;Mediana;Ventas Técnicas;Dirección;Norte;Ventas;COP;28100000;44200000
+Colombia;Pequeña;Ventas Técnicas;Dirección;Centro;Desarrollo;COP;22800000;35800000
+Colombia;Pequeña;Ventas Técnicas;Dirección;Noroccidental;Industrial;COP;22700000;35700000
+Colombia;Pequeña;Ventas Técnicas;Dirección;Pacifico;Desarrollo;COP;20500000;32200000
+Colombia;Pequeña;Ventas Técnicas;Dirección;Norte;Industrial;COP;21500000;33800000
+Colombia;Grande;Ventas Técnicas;Gerencia;Centro;Industrial;COP;21700000;36200000
+Colombia;Grande;Ventas Técnicas;Gerencia;Noroccidental;Industrial;COP;20600000;34400000
+Colombia;Grande;Ventas Técnicas;Gerencia;Pacifico;Industrial;COP;19600000;32600000
+Colombia;Grande;Ventas Técnicas;Gerencia;Norte;Manager;COP;18600000;31000000
+Colombia;Mediana;Ventas Técnicas;Gerencia;Centro;Manager;COP;16100000;26800000
+Colombia;Mediana;Ventas Técnicas;Gerencia;Noroccidental;Manager;COP;14500000;24200000
+Colombia;Mediana;Ventas Técnicas;Gerencia;Pacifico;Manager;COP;13800000;23000000
+Colombia;Mediana;Ventas Técnicas;Gerencia;Norte;Manager;COP;14500000;24100000
+Colombia;Pequeña;Ventas Técnicas;Gerencia;Centro;Manager;COP;11700000;19500000
+Colombia;Pequeña;Ventas Técnicas;Gerencia;Noroccidental;Manager;COP;11100000;18500000
+Colombia;Pequeña;Ventas Técnicas;Gerencia;Pacifico;Manager;COP;10500000;17600000
+Colombia;Pequeña;Ventas Técnicas;Gerencia;Norte;Regional;COP;11100000;18400000
+Colombia;Grande;Ventas Técnicas;Jefatura;Centro;Regional;COP;9700000;16900000
+Colombia;Grande;Ventas Técnicas;Jefatura;Noroccidental;Ventas;COP;9200000;16100000
+Colombia;Grande;Ventas Técnicas;Jefatura;Pacifico;Regional;COP;8700000;15200000
+Colombia;Grande;Ventas Técnicas;Jefatura;Norte;Regional;COP;8700000;15200000
+Colombia;Mediana;Ventas Técnicas;Jefatura;Centro;Licitaciones;COP;6800000;11900000
+Colombia;Mediana;Ventas Técnicas;Jefatura;Noroccidental;Licitaciones;COP;6500000;11300000
+Colombia;Mediana;Ventas Técnicas;Jefatura;Pacifico;Licitaciones;COP;6100000;10700000
+Colombia;Mediana;Ventas Técnicas;Jefatura;Norte;Licitaciones;COP;6100000;10700000
+Colombia;Pequeña;Ventas Técnicas;Jefatura;Centro;Regional;COP;5500000;9600000
+Colombia;Pequeña;Ventas Técnicas;Jefatura;Noroccidental;Ventas;COP;5200000;9100000
+Colombia;Pequeña;Ventas Técnicas;Jefatura;Pacifico;Licitaciones;COP;4700000;8200000
+Colombia;Pequeña;Ventas Técnicas;Jefatura;Norte;Ventas;COP;4900000;8600000
+Colombia;Grande;Ventas Técnicas;Especialista;Centro;Aplicaciones;COP;5800000;9200000
+Colombia;Grande;Ventas Técnicas;Especialista;Noroccidental;Aplicaciones;COP;5500000;8700000
+Colombia;Grande;Ventas Técnicas;Especialista;Pacifico;Comercial;COP;5400000;8700000
+Colombia;Grande;Ventas Técnicas;Especialista;Norte;Comercial;COP;5400000;8700000
+Colombia;Mediana;Ventas Técnicas;Especialista;Centro;Comercial;COP;4500000;7100000
+Colombia;Mediana;Ventas Técnicas;Especialista;Noroccidental;Comercial;COP;4200000;6800000
+Colombia;Mediana;Ventas Técnicas;Especialista;Pacifico;Comercial;COP;3800000;6100000
+Colombia;Mediana;Ventas Técnicas;Especialista;Norte;Aplicaciones;COP;3800000;6100000
+Colombia;Pequeña;Ventas Técnicas;Especialista;Centro;Vendedor;COP;3400000;5500000
+Colombia;Pequeña;Ventas Técnicas;Especialista;Noroccidental;Vendedor;COP;3200000;5200000
+Colombia;Pequeña;Ventas Técnicas;Especialista;Pacifico;Vendedor;COP;3100000;4900000
+Colombia;Pequeña;Ventas Técnicas;Especialista;Norte;Vendedor;COP;3100000;4900000
